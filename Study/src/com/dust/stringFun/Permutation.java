@@ -1,4 +1,4 @@
-package com.dust.string;
+package com.dust.stringFun;
 
 import com.dust.utils.Utils;
 

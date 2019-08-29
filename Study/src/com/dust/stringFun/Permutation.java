@@ -6,7 +6,7 @@ import com.dust.utils.Utils;
  * @author dustdawn
  * @date 2019/8/1 23:02
  *
- * 求一个字符串的所有排列（递归）时间复杂度n!
+ *  求一个字符串的所有排列（递归）时间复杂度n!
  */
 public class Permutation {
 

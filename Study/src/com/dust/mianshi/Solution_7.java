@@ -1,6 +1,5 @@
 package com.dust.mianshi;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
@@ -15,10 +14,13 @@ public class Solution_7 {
 	public static void bubbleSort(int[] array) {
 		if(array.length ==0)
 			return;
-		for(int i = 0;i<array.length;i++) {
-			for(int j = 0;j<array.length-1;j++) 
+		boolean needNextPass = true;
+		for(int i = 1;i<array.length;i++) {
+			needNextPass = false;
+			for(int j = 0;j<array.length-i;j++)
 				if(array[j]>array[j+1]) {
 					swap(array,j,j+1);
+					needNextPass = true;
 				}
 		
 			out("冒泡排序：",i+1,Arrays.toString(array));

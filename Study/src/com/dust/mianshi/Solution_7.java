@@ -15,7 +15,7 @@ public class Solution_7 {
 		if(array.length ==0)
 			return;
 		boolean needNextPass = true;
-		for(int i = 1;i<array.length;i++) {
+		for(int i = 1;i<array.length&&needNextPass;i++) {
 			needNextPass = false;
 			for(int j = 0;j<array.length-i;j++)
 				if(array[j]>array[j+1]) {

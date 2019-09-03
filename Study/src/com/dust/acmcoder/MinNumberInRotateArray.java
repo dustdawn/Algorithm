@@ -14,7 +14,7 @@ package com.dust.acmcoder;
  */
 public class MinNumberInRotateArray {
     //O(n)
-    public int minNumberInRotateArray(int [] array) {
+    public int minNumberInRotateArray(int[] array) {
         if(array.length == 0) {
             return 0;
         }
@@ -24,6 +24,30 @@ public class MinNumberInRotateArray {
             }
         }
         return array[0];
+    }
+    //二分查找变种O(log n)
+    public int minNumberInRotateArray2(int[] array) {
+        if(array.length == 0) {
+            return 0;
+        }
+        int left = 0;
+        int right = array.length-1;
+        int mid;
+        while(left < right) {
+            if(array[left] < array[right]) {
+                return array[left];  //第一次判断为没有选择；第n次防止1011情况
+            }
+            mid = (left + right) / 2;
+            if (array[mid] > array[left]) {  //位于高位部分，后移
+                left = mid + 1;
+            }else if (array[mid] < array[right]) {  //位于低位部分，右边界不变
+                right = mid;
+            }else
+                left++;   //减小范围
+
+
+        }
+        return array[left];
     }
 
 }

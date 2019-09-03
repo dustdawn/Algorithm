@@ -44,8 +44,6 @@ public class MinNumberInRotateArray {
                 right = mid;
             }else
                 left++;   //减小范围
-
-
         }
         return array[left];
     }

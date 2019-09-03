@@ -13,6 +13,7 @@ package com.dust.acmcoder;
  * NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
  */
 public class MinNumberInRotateArray {
+    //O(n)
     public int minNumberInRotateArray(int [] array) {
         if(array.length == 0) {
             return 0;

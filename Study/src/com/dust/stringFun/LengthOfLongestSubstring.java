@@ -19,12 +19,10 @@ public class LengthOfLongestSubstring {
         //[i, j)的滑动窗口
         while (i < n && j < n) {
             if (!set.contains(s.charAt(j))) {
-                char a = s.charAt(j);
                 set.add(s.charAt(j));
                 ans = Math.max(ans, j-i+1);
                 ++j;
             }else {
-                char c = s.charAt(i);
                 set.remove(s.charAt(i));
                 ++i;
             }

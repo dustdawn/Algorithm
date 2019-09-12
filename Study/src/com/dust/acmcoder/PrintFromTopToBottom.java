@@ -26,9 +26,6 @@ public class PrintFromTopToBottom {
 
         TreeNode node = root;
 
-
-
-
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.offer(node);
 

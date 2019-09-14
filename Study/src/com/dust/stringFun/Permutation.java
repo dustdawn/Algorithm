@@ -15,6 +15,8 @@ public class Permutation {
         permutation(arr,0);
     }
 
+    //思路：确定第一个位置的字符，然后分别与后面的字符进行交换
+    //出口：直到与末尾元素交换
     public static void permutation(char[] arr, int start) {
         if(arr == null || start<0){
             return;
@@ -28,12 +30,12 @@ public class Permutation {
             for (int i = start; i < arr.length; i++) {
                 Utils.swap(arr, start, i);
                 permutation(arr, start + 1);
-                Utils.swap(arr, start, i);
+                Utils.swap(arr, start, i);//还原
             }
         }
     }
     public static void main(String[] args) {
-        String s = "abcd";
+        String s = "abc";
         permutation(s);
     }
 }

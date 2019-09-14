@@ -29,9 +29,6 @@ public class Permutation {
     }
     public void swap(char[] ch, int i, int j) {
 
-        if (ch[i] == ch[j]) {
-            return;
-        }
         char temp = ch[i];
         ch[i] = ch[j];
         ch[j] = temp;
@@ -45,7 +42,6 @@ public class Permutation {
         //出口：i为最后一个元素，后面无元素，无需进行深度递归，回溯回去
         if (i == ch.length-1) {
             set.add(String.valueOf(ch));//去重
-
             return;
         }
         for (int j = i; j < ch.length; j++) {

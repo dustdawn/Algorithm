@@ -53,6 +53,6 @@ public class Permutation {
 
     public static void main(String[] args) {
         Permutation o = new Permutation();
-        System.out.println(o.Permutation("aaa").toString());
+        System.out.println(o.Permutation("abcd").toString());
     }
 }

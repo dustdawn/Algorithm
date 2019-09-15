@@ -19,8 +19,9 @@ import java.util.LinkedList;
 public class maxInWindows {
     LinkedList<Integer> list = new LinkedList<>();
     public ArrayList<Integer> maxInWindows(int [] num, int size) {
+        ArrayList<Integer> arrayList = new ArrayList<>();
         if (size > num.length || size <= 0) {
-            //return list;
+            return arrayList;
         }
         //思路，利用队列保存进入滑动窗口内部的元素位置(如新元素小于队列尾保存索引对应的元素，则直接将元素索引入队，
         // 反之出队尾元素索引，将该元素索引入队)保证队列从大到小排列
@@ -41,7 +42,7 @@ public class maxInWindows {
                 result[i-size+1] = num[list.peek()];
             }
         }
-        ArrayList<Integer> arrayList = new ArrayList<>();
+
         for (int i : result) {
             arrayList.add(i);
         }

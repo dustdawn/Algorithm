@@ -35,7 +35,7 @@ public class StackToQueue<T>{
         return s2.peek();
     }
 
-    public void translate() {
+    private void translate() {
         if (s1.isEmpty() && s2.isEmpty()) {
             throw new RuntimeException("queue is empty");
         }

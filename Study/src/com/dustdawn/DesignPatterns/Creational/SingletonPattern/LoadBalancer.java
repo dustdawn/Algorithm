@@ -24,12 +24,8 @@ public class LoadBalancer {
     }
 
     public static LoadBalancer getLoadBalancer() {
-        if (null == instance) {
-            synchronized(LoadBalancer.class) {
-                if (null != instance) {
-                    instance = new LoadBalancer();
-                }
-            }
+        if (null != instance) {
+            instance = new LoadBalancer();
         }
         return instance;
     }

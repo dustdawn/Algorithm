@@ -27,17 +27,21 @@ public class Solution_9 {
 
 	}
 	public static void buildMaxHeap(int[] arr,int len) {
-		for(int i = (len-2)/2;i>=0;i--)
-			heapify(arr,len,i);
+		for(int i = (len-2)/2;i>=0;i--) {
+            heapify(arr,len,i);
+        }
 	}
 	public static void heapify(int[] arr,int len,int i) {
-		if(i>=len)
-			return;
+		if(i>=len) {
+            return;
+        }
 		int maxIndex = i;
-		if(i*2+1<len && arr[i*2+1]>arr[maxIndex])
-			maxIndex = i*2+1;
-		if(i*2+2<len && arr[i*2+2]>arr[maxIndex])
-			maxIndex = i*2+2;
+		if(i*2+1<len && arr[i*2+1]>arr[maxIndex]) {
+            maxIndex = i*2+1;
+        }
+		if(i*2+2<len && arr[i*2+2]>arr[maxIndex]) {
+            maxIndex = i*2+2;
+        }
 		if(maxIndex != i) {
 			swap(arr,maxIndex,i);
 			//对子层作递归heapify操作

@@ -9,6 +9,7 @@ package com.dustdawn.DesignPatterns.Creational.PrototypePattern;
  * 抽象原型类
  */
 public abstract class Prototype {
+    @Override
     public abstract Prototype clone();
 }
 

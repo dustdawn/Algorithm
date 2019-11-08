@@ -33,7 +33,7 @@ public class mainStack {
         if (stack.size() == 0) {
             return;
         }
-        if (min == stack.peek()) {//如要弹出的元素为保存的最小值，则弹出该元素,此时栈顶保存的是上一个min的备份，用旧min的值更新min
+        if (min.equals(stack.peek())) {//如要弹出的元素为保存的最小值，则弹出该元素,此时栈顶保存的是上一个min的备份，用旧min的值更新min
             if (stack.size() > 1) {
                 stack.pop();
                 min = stack.peek();

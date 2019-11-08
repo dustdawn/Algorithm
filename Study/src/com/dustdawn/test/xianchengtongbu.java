@@ -8,6 +8,7 @@ public class xianchengtongbu implements Runnable {
 		t1.start();
 		t2.start();
 	}
+	@Override
 	public void run() {
 		Sync.print();
 	}
@@ -17,8 +18,9 @@ public class xianchengtongbu implements Runnable {
 			try {
 				for(int i=10;i<=15;i++) {
 					System.out.print(i);
-				if(i!=15)
-					System.out.print(",");
+				if(i!=15) {
+                    System.out.print(",");
+                }
 					Thread.sleep(500);
 				}
 				System.out.println();

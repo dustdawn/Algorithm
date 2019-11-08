@@ -5,7 +5,8 @@ public class consumer extends Thread{
 	public consumer(product pro) {
 		this.pro = pro;
 	}
-	public  void run() {
+	@Override
+    public  void run() {
 		while(true) {
 			try {
 				Thread.sleep(3000);    //wait�ͷŶ�������sleep�����ͷŶ�����

@@ -11,8 +11,9 @@ public class lingxing {
 			for(j=1;j<=n-i;j++) {
 				System.out.print(" ");
 			}
-			for(j=1;j<=2*i-1;j++)
-				System.out.print("*");
+			for(j=1;j<=2*i-1;j++) {
+                System.out.print("*");
+            }
 			for(j=1;j<=n-i;j++) {
 				System.out.print(" ");
 			}
@@ -23,8 +24,9 @@ public class lingxing {
 			for(j=1;j<=n-i;j++) {
 				System.out.print(" ");
 			}
-			for(j=1;j<=2*i-1;j++)
-				System.out.print("*");
+			for(j=1;j<=2*i-1;j++) {
+                System.out.print("*");
+            }
 			for(j=1;j<=n-i;j++) {
 				System.out.print(" ");
 			}

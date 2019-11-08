@@ -12,16 +12,18 @@ public class Solution_7 {
 	 * :冒泡排序  O(n^2)
 	 */
 	public static void bubbleSort(int[] array) {
-		if(array.length ==0)
-			return;
+		if(array.length ==0) {
+            return;
+        }
 		boolean needNextPass = true;
 		for(int i = 1;i<array.length&&needNextPass;i++) {
 			needNextPass = false;
-			for(int j = 0;j<array.length-i;j++)
-				if(array[j]>array[j+1]) {
-					swap(array,j,j+1);
-					needNextPass = true;
-				}
+			for(int j = 0;j<array.length-i;j++) {
+                if(array[j]>array[j+1]) {
+                    swap(array,j,j+1);
+                    needNextPass = true;
+                }
+            }
 		
 			out("冒泡排序：",i+1,Arrays.toString(array));
 		}
@@ -31,13 +33,15 @@ public class Solution_7 {
 	 * :选择排序 选择出最小的比较 O(n^2)
 	 */
 	public static void selectionSort(int[] array) {
-		if(array.length ==0)
-			return;
+		if(array.length ==0) {
+            return;
+        }
 		for(int i = 0;i<array.length;i++){
 			int minIndex = i;
 			for(int j = i;j<array.length;j++) {
-				if(array[j]<array[minIndex])
-					minIndex = j;
+				if(array[j]<array[minIndex]) {
+                    minIndex = j;
+                }
 			}
 			//array[i]和array[minIndex]交换
 			swap(array,i,minIndex);
@@ -48,8 +52,9 @@ public class Solution_7 {
 	 * :插入排序 O(n^2)
 	 */
 	public static void insertSort(int[] array) {
-		if(array.length ==0)
-			return;
+		if(array.length ==0) {
+            return;
+        }
 		int current = 0;
 		for(int i = 0 ;i<array.length-1;i++) {
 			current = array[i+1];
@@ -72,8 +77,9 @@ public class Solution_7 {
 	 */
 	static int count=1;
 	public static void quickSort(int[] array,int start,int end) {
-		if(array.length<1 || start<0 || end>array.length || start>end)
-			return;
+		if(array.length<1 || start<0 || end>array.length || start>end) {
+            return;
+        }
 			//以第一个元素为基准  两边分为大 小元素  返回值为排序后的中间位置
 			int baseIndex = partition(array,start,end);
 			out("快速排序：",count++,Arrays.toString(array));
@@ -86,15 +92,17 @@ public class Solution_7 {
 	public static int partition(int[] array,int start,int end) {
 		int base = array[start];
 		while(start<end) {
-			while(start<end && array[end]>=base)
-				end--;
+			while(start<end && array[end]>=base) {
+                end--;
+            }
 			//从后往前找到第一个小于base的元素
 			//array[start] = array[end];
 			swap(array,start,end);
 			
 			
-			while(start<end && array[start]<=base)
-				start++;
+			while(start<end && array[start]<=base) {
+                start++;
+            }
 			//从前往后找到第一个大于base的元素
 			//array[end] = array[start];
 			swap(array,start,end);
@@ -138,8 +146,9 @@ public class Solution_7 {
 	static int count2 = 1;
 	//分
 	public static int[] mergeSort(int[] array) {
-		if(array.length<2)
-			return array;
+		if(array.length<2) {
+            return array;
+        }
 		int mid = array.length/2;
 		//分组0到mid-1，mid到lengh-1
 		int left[] = Arrays.copyOfRange(array, 0, mid);
@@ -160,17 +169,20 @@ public class Solution_7 {
 		*/
 		for(int index = 0,i = 0,j = 0;index<result.length;index++) {
 			//表示若执行第四个判断left到末尾(所有元素归并到result内)，将right元素归并到result即可
-			if(i>=left.length)
-				result[index] = right[j++];
+			if(i>=left.length) {
+                result[index] = right[j++];
+            }
 			//表示若执行第三个判断right到末尾(所有元素归并到result内)，将left元素归并到result即可
-			else if(j>=right.length)
-				result[index] = left[i++];
+			else if(j>=right.length) {
+                result[index] = left[i++];
+            }
 			//第一组中的第i个数比较第二组第j个数
 			//则赋值result第index个元素为两组中小的数
-			else if(left[i]>right[j])
-				result[index] = right[j++];
-			else
-				result[index] = left[i++];
+			else if(left[i]>right[j]) {
+                result[index] = right[j++];
+            } else {
+                result[index] = left[i++];
+            }
 		}
 		out("归并排序：",count2++,Arrays.toString(result));
 		return result;
@@ -186,8 +198,9 @@ public class Solution_7 {
 	public static void heapSort(int[] array) {
 		int len = array.length;
 		int k = 1;
-		if(len<1)
-			return;
+		if(len<1) {
+            return;
+        }
 		buildMaxHeap(array,len);
 		//heapify从上至下，从下至上形成最大堆后根节点一定为最大值
 		//循环交换首位和末尾，将换到末尾的最大值移出
@@ -204,18 +217,22 @@ public class Solution_7 {
 	//即可完成对整个完全二叉树的heapify
 	//最后子叶序号为len-1,其父结点为(len-1-1)/2
 	public static void buildMaxHeap(int[] array,int len) {
-		for(int i = (len-2)/2;i>=0;i--)
-			heapify(array,len,i);
+		for(int i = (len-2)/2;i>=0;i--) {
+            heapify(array,len,i);
+        }
 	}
 	//对i结点及其子结点组成的部分进行heapify操作，即形成堆操作
 	public static void heapify(int[] array,int len ,int i) {
-		if(i>=len)
-			return;
+		if(i>=len) {
+            return;
+        }
 		int maxIndex = i;
-		if(i*2+1<len && array[i*2+1]>array[maxIndex])
-			maxIndex = i*2+1;
-		if(i*2+2<len && array[i*2+2]>array[maxIndex])
-			maxIndex = i*2+2;
+		if(i*2+1<len && array[i*2+1]>array[maxIndex]) {
+            maxIndex = i*2+1;
+        }
+		if(i*2+2<len && array[i*2+2]>array[maxIndex]) {
+            maxIndex = i*2+2;
+        }
 		if(maxIndex != i) {
 			swap(array,maxIndex,i);
 			//对子层作递归heapify操作
@@ -236,18 +253,20 @@ public class Solution_7 {
 			while(left<=right) {
 				mid = (left + right)/2;
 				//插入数小于中间数,右端点-1
-				if(temp<array[mid])
-					right = mid-1;
-				else 
-					left = mid+1;
+				if(temp<array[mid]) {
+                    right = mid-1;
+                } else {
+                    left = mid+1;
+                }
 			}
 			//将前面所有的大于当前插入元素的往后移动
 			//i即为当前插入元素的序号
 			//插入原理同插入排序
 			//此时的left即为数组中第一个小于当前插入元素的序号的下一个
 			//即preIndex+1
-			for(int j = i-1;j>=left;j--)
-				array[j+1] = array[j];
+			for(int j = i-1;j>=left;j--) {
+                array[j+1] = array[j];
+            }
 			//插入当前插入元素
 			array[left] = temp;
 			
@@ -259,15 +278,17 @@ public class Solution_7 {
 	 * 
 	 */
 	public static void radixSort(int[] array) {
-		if(array == null || array.length<2)
-			return;
+		if(array == null || array.length<2) {
+            return;
+        }
 		int len = array.length;
 		int count = 1;
 		//算出最大数的位数,即为分配回收的次数
 		int maxDigit = 1;
 		int max = array[0];
-		for(int i = 1;i<len;i++) 
-			max = max<array[i]?array[i]:max;
+		for(int i = 1;i<len;i++) {
+            max = max<array[i]?array[i]:max;
+        }
 		while(max!=0) {
 			max/=10;
 			maxDigit*=10;
@@ -291,12 +312,14 @@ public class Solution_7 {
 			//回收
 			for(int i = 0;i<len;i++) {
 				if(order[i]!=0)//桶中有数据
-					for(int j = 0;j<order[i];j++) {
-						//回收基数为i的桶中的第j个元素
-						//到回收后的序列中
-						array[k] = bucket[i][j];
-						k++;
-					}
+                {
+                    for(int j = 0;j<order[i];j++) {
+                        //回收基数为i的桶中的第j个元素
+                        //到回收后的序列中
+                        array[k] = bucket[i][j];
+                        k++;
+                    }
+                }
 				
 				order[i] = 0;//清空桶
 			}

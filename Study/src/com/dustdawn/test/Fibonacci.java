@@ -2,8 +2,9 @@ package com.dustdawn.test;
 
 public class Fibonacci {
 	public static int Fi(int n) {
-		if(n==1||n==2)
-			return 1;
+		if(n==1||n==2) {
+            return 1;
+        }
 		
 		return Fi(n-1)+Fi(n-2); 
 	}

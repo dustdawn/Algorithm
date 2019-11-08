@@ -18,9 +18,9 @@ public class Solution_8 {
 	 * 递归实现
 	 */
 	public static void Hanoi(int n,char a,char b,char c) {
-		if(n==1)
-			move(a,c);
-		else {
+		if(n==1) {
+            move(a,c);
+        } else {
 			//第一步:将n-1块看作整体从起点位a，
 			//借助辅助位"c",放入终点位b中
 			Hanoi(n-1,a,c,b);
@@ -42,9 +42,9 @@ public class Solution_8 {
 		stateStack.push(new State(n,a,b,c));
 		State state = null;
 		while((state = stateStack.pop())!=null) {
-			if(state.N == 1)
-				move(state.A,state.C);
-			else {
+			if(state.N == 1) {
+                move(state.A,state.C);
+            } else {
 				//逆序,先进后出，后出顺序与递归顺序一致
 				stateStack.push(new State(state.N-1,state.B,state.A,state.C));
 				stateStack.push(new State(1,state.A,state.B,state.C));
@@ -84,10 +84,11 @@ class StateStack{
 		this.state[top++] = state;
 	}
 	public State pop() {
-		if(top>0)
-			return state[--top];
-		else
-			return null;
+		if(top>0) {
+            return state[--top];
+        } else {
+            return null;
+        }
 	}
 }
 	

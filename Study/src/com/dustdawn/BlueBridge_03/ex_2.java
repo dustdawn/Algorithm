@@ -13,7 +13,9 @@ public class ex_2 {
 			try{
 				for(;;)
 				{
-					if(s.charAt(i-step) != s.charAt(i+step)) break;
+					if(s.charAt(i-step) != s.charAt(i+step)) {
+                        break;
+                    }
 					step++;
 				}
 			}catch(Exception e){}
@@ -26,7 +28,9 @@ public class ex_2 {
 			try{
 				for(;;)
 				{
-					if(s.charAt(i-step)!=s.charAt(i+step+1)) break;    // 填空2
+					if(s.charAt(i-step)!=s.charAt(i+step+1)) {
+                        break;    // 填空2
+                    }
 					step++;
 				}
 			}catch(Exception e){}
@@ -34,8 +38,12 @@ public class ex_2 {
 			String s2 = s.substring(i-step+1,i+step+1);
 			
 			
-			if(s1.length() > max_s.length()) max_s = s1;
-			if(s2.length() > max_s.length()) max_s = s2;
+			if(s1.length() > max_s.length()) {
+                max_s = s1;
+            }
+			if(s2.length() > max_s.length()) {
+                max_s = s2;
+            }
 		}
 		
 		return max_s;				

@@ -23,8 +23,9 @@ public class Solution_1 {
 				left = mid+1;
 			}else if(target <nums[mid]) {
 				right = mid-1;
-			}else
-				return mid;
+			}else {
+                return mid;
+            }
 		}
 				
 		return -1;

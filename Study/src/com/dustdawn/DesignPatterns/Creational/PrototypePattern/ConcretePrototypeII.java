@@ -5,6 +5,7 @@ package com.dustdawn.DesignPatterns.Creational.PrototypePattern;
  * @date 2019/11/4 16:04
  */
 public class ConcretePrototypeII implements Cloneable{
+    @Override
     public Prototype clone() {
         Object object = null;
         try {

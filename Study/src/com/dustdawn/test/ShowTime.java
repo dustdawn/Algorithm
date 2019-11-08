@@ -14,7 +14,8 @@ public class ShowTime {
 		public MyShow(int i) {
 			this.internal=i;
 		}
-		public synchronized void run() {
+		@Override
+        public synchronized void run() {
 			while(true){
 				try {
 					SimpleDateFormat sdf=new SimpleDateFormat("hh:mm:ss");

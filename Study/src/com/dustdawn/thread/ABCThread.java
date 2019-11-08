@@ -24,12 +24,13 @@ public class ABCThread extends Thread {
                 if (lock.getFlag().equals(flag)) {
                     System.out.print(flag);
                     count--;
-                    if("A".equals(flag))
+                    if("A".equals(flag)) {
                         lock.setFlag("B");//线程执行完方法后释放该方法的对象锁
-                    else if("B".equals(flag))
+                    } else if("B".equals(flag)) {
                         lock.setFlag("C");
-                    else if("C".equals(flag))
+                    } else if("C".equals(flag)) {
                         lock.setFlag("A");
+                    }
                 }
             }
         }

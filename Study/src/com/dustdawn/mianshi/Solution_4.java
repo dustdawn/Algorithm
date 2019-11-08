@@ -39,14 +39,17 @@ public class Solution_4 {
 				default: System.out.println("default");break;
 			}
 			if(i!=0) {
-				if( (  (s.charAt(i)=='V')||(s.charAt(i)=='X')   ) && (s.charAt(i-1)=='I')  )
-	                 result = result-1*2;
+				if( (  (s.charAt(i)=='V')||(s.charAt(i)=='X')   ) && (s.charAt(i-1)=='I')  ) {
+                    result = result-1*2;
+                }
 	               
-               if( (  (s.charAt(i)=='L')||(s.charAt(i)=='C')   ) && (s.charAt(i-1)=='X')  )
+               if( (  (s.charAt(i)=='L')||(s.charAt(i)=='C')   ) && (s.charAt(i-1)=='X')  ) {
                    result = result-10*2;
+               }
                
-               if( (  (s.charAt(i)=='D')||(s.charAt(i)=='M')   ) && (s.charAt(i-1)=='C')  )
+               if( (  (s.charAt(i)=='D')||(s.charAt(i)=='M')   ) && (s.charAt(i-1)=='C')  ) {
                    result = result-100*2;
+               }
 			}
 		}
 		return result;

@@ -42,8 +42,9 @@ public class MinNumberInRotateArray {
                 left = mid + 1;
             }else if (array[mid] < array[right]) {  //位于低位部分，右边界不变
                 right = mid;
-            }else
+            }else {
                 left++;   //减小范围
+            }
         }
         return array[left];
     }

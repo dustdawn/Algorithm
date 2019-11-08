@@ -12,8 +12,9 @@ public class Solution_3 {
 		System.out.println(isPalindrome(0));
 	}
 	public static boolean isPalindrome(int x) {
-        if(x<0||x%10==0&&x!=0) 
-        	return false;
+        if(x<0||x%10==0&&x!=0) {
+            return false;
+        }
         int revered = 0;
         while(x>revered) {
         	int pop = x%10;

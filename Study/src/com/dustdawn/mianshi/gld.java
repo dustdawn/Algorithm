@@ -248,8 +248,9 @@ public class gld {
 
     }
     public static void lcs(int i, int j, int[] arr, int[][] seq) {
-        if (i == 0 || j == 0)
+        if (i == 0 || j == 0) {
             return;
+        }
         if (seq[i][j] == 1){
             lcs(i-1, j-1, arr, seq);
             System.out.println(arr[i]);

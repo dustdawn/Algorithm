@@ -8,7 +8,7 @@ package com.dustdawn.leetcode.dp;
  * @author dustdawn
  * @date 2022/2/21 22:13
  */
-public class longestPalindromeSubseq {
+public class LongestPalindromeSubseq {
     public static int longestPalindromeSubseq(String s) {
         int n = s.length();
         char[] str = s.toCharArray();

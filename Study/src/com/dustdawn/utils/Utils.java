@@ -7,6 +7,7 @@ package com.dustdawn.utils;
 public class Utils {
     /**
      * char型数组交换
+     *
      * @param arr
      * @param i
      * @param j
@@ -19,6 +20,7 @@ public class Utils {
 
     /**
      * int型数组交换
+     *
      * @param arr
      * @param i
      * @param j
@@ -31,17 +33,18 @@ public class Utils {
 
     /**
      * char型数组反转
+     *
      * @param arr
      * @param i
      * @param j
      */
     public static boolean reverseArr(char[] arr, int i, int j) {
-        if(i<j) {
+        if (i < j) {
             return false;
         }
 
-        while(i<j) {
-            swap(arr,i,j);
+        while (i < j) {
+            swap(arr, i, j);
             i++;
             j--;
         }
@@ -50,17 +53,18 @@ public class Utils {
 
     /**
      * int型数组反转
+     *
      * @param arr
      * @param i
      * @param j
      */
     public static boolean reverseArr(int[] arr, int i, int j) {
-        if(i<j) {
+        if (i < j) {
             return false;
         }
 
-        while(i<j) {
-            swap(arr,i,j);
+        while (i < j) {
+            swap(arr, i, j);
             i++;
             j--;
         }

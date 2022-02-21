@@ -6,7 +6,7 @@ package com.dustdawn.DesignPatterns.Structural.CompositePattern;
  */
 public class Client {
     public static void main(String[] args) {
-        AbstractFile file1,file2,file3,file4,folder1;
+        AbstractFile file1, file2, file3, file4, folder1;
         file1 = new TextFile("文本文件1");
         file2 = new TextFile("文本文件2");
         file3 = new VideoFile("视频文件1");

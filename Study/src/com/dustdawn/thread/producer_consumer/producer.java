@@ -8,7 +8,7 @@ package com.dustdawn.thread.producer_consumer;
 /**
  * 生产者线程
  */
-public class producer implements Runnable{
+public class producer implements Runnable {
     private product pro;
 
     public producer(product pro) {

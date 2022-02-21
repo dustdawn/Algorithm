@@ -19,19 +19,22 @@ class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
-    TreeNode(int x) { val = x; }
-}
-public class ReConstructBinaryTree {
-    public static TreeNode reConstructBinaryTree(int [] pre,int [] in) {
 
-        if(pre.length ==0 || in.length ==0) {
+    TreeNode(int x) {
+        val = x;
+    }
+}
+
+public class ReConstructBinaryTree {
+    public static TreeNode reConstructBinaryTree(int[] pre, int[] in) {
+
+        if (pre.length == 0 || in.length == 0) {
             return null;
         }
         TreeNode root = new TreeNode(pre[0]);
 
-
         for (int i = 0; i < in.length; i++) {
-            if(in[i] == root.val) {
+            if (in[i] == root.val) {
 
                 //中根遍历 根节点前为左子树,共i个结点，0->i-1;
                 //        根节点后为右子树,共len-(i+1)个结点，i+1->len-1即总长度减去左子树和根节点
@@ -41,26 +44,27 @@ public class ReConstructBinaryTree {
                 //递归调用
 
                 root.left = reConstructBinaryTree(
-                        Arrays.copyOfRange(pre,1,i+1),
-                        Arrays.copyOfRange(in,0,i));
+                        Arrays.copyOfRange(pre, 1, i + 1),
+                        Arrays.copyOfRange(in, 0, i));
                 root.right = reConstructBinaryTree(
-                        Arrays.copyOfRange(pre,i+1,pre.length),
-                        Arrays.copyOfRange(in,i+1,in.length));
+                        Arrays.copyOfRange(pre, i + 1, pre.length),
+                        Arrays.copyOfRange(in, i + 1, in.length));
                 break;
             }
         }
 
-
         return root;
     }
+
     public static void main(String[] args) {
-        int[] pre = {1,2,4,7,3,5,6,8};
-        int[] in = {4,7,2,1,5,3,8,6};
+        int[] pre = {1, 2, 4, 7, 3, 5, 6, 8};
+        int[] in = {4, 7, 2, 1, 5, 3, 8, 6};
         TreeNode node = reConstructBinaryTree(pre, in);
         postOrder(node);
     }
+
     public static void postOrder(TreeNode node) {
-        if(node != null) {
+        if (node != null) {
             postOrder(node.left);
             postOrder(node.right);
             System.out.println(node.val);

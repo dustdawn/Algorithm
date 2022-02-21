@@ -18,6 +18,7 @@ public class kthTallest {
         要想找到第 K 大结点必要要知道排序，二叉树的前、中、后遍历中的中序遍历就是从小到大排序。然后遍历的同时计数找到第 K 大节点。
      */
     List<TreeNode> list = new ArrayList<>();
+
     public TreeNode kthTallest(TreeNode root, int k) {
         inOrder(root);
         int len = list.size();
@@ -27,6 +28,7 @@ public class kthTallest {
         return null;
 
     }
+
     public void inOrder(TreeNode node) {
         while (node != null) {
             inOrder(node.left);

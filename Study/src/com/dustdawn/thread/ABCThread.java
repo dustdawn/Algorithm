@@ -11,10 +11,12 @@ package com.dustdawn.thread;
 public class ABCThread extends Thread {
     private Lock lock;
     private String flag;
+
     public ABCThread(String flag, Lock lock) {
         this.flag = flag;
         this.lock = lock;
     }
+
     @Override
     public void run() {
         int count = 5;
@@ -24,11 +26,11 @@ public class ABCThread extends Thread {
                 if (lock.getFlag().equals(flag)) {
                     System.out.print(flag);
                     count--;
-                    if("A".equals(flag)) {
+                    if ("A".equals(flag)) {
                         lock.setFlag("B");//线程执行完方法后释放该方法的对象锁
-                    } else if("B".equals(flag)) {
+                    } else if ("B".equals(flag)) {
                         lock.setFlag("C");
-                    } else if("C".equals(flag)) {
+                    } else if ("C".equals(flag)) {
                         lock.setFlag("A");
                     }
                 }
@@ -48,8 +50,8 @@ public class ABCThread extends Thread {
         thread3.start();
     }
 }
-class Lock
-{
+
+class Lock {
     private String flag;
 
     public void setFlag(String flag) {

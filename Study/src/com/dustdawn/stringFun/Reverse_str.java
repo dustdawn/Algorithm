@@ -3,13 +3,13 @@ package com.dustdawn.stringFun;
 /**
  * @author dustdawn
  * @date 2019/8/1 23:32
- *  字符串反转（N）
+ * 字符串反转（N）
  */
 public class Reverse_str {
     public static String reverse_str(String str) {
         char[] ch = str.toCharArray();
         char temp;
-        for(int i = 0,j = ch.length-1;i<j;i++,j--) {
+        for (int i = 0, j = ch.length - 1; i < j; i++, j--) {
             temp = ch[i];
             ch[i] = ch[j];
             ch[j] = temp;
@@ -17,6 +17,7 @@ public class Reverse_str {
         return new String(ch);
 
     }
+
     public static void main(String[] args) {
         String str = "abcdefg";
         System.out.println(reverse_str(str));

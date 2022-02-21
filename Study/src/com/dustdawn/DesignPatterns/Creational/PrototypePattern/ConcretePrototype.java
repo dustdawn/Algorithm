@@ -8,7 +8,7 @@ package com.dustdawn.DesignPatterns.Creational.PrototypePattern;
 /**
  * 具体原型类
  */
-public class ConcretePrototype extends Prototype{
+public class ConcretePrototype extends Prototype {
     private String str;//成员变量
 
     public String getStr() {
@@ -18,7 +18,6 @@ public class ConcretePrototype extends Prototype{
     public void setStr(String str) {
         this.str = str;
     }
-
 
     @Override
     public Prototype clone() {

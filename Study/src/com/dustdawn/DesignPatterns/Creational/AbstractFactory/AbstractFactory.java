@@ -10,5 +10,6 @@ package com.dustdawn.DesignPatterns.Creational.AbstractFactory;
  */
 public interface AbstractFactory {
     public AbstractProdustA createProductA();//工厂方法一
+
     public AbstractProdustB createProductB();//工厂方法二
 }

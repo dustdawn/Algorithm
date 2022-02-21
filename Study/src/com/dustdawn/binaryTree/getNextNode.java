@@ -33,7 +33,7 @@ public class getNextNode {
                 root = root.left;
             }
             return root;
-        }else {
+        } else {
             while (root.next != null) {
                 TreeNode froot = root.next;
                 if (froot.left == root) {

@@ -13,12 +13,13 @@ public class Singleton {
     //也会屏蔽一些JVM的代码优化导致运行效率低，所有也不完美
     private volatile static Singleton instance = null;
 
-    private Singleton() {}
+    private Singleton() {
+    }
 
     public static Singleton getInstance() {
         //第一个if在已创建实例后直接返回实例，不再进入同步代码块竞争锁
         if (null != instance) {
-            synchronized(Singleton.class) {
+            synchronized (Singleton.class) {
                 //第二个if防止同时通过第一个if的多个线程创建多个实例
                 if (null != instance) {
                     instance = new Singleton();

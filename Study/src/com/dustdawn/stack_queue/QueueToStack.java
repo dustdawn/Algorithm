@@ -28,7 +28,6 @@ public class QueueToStack<T> {
             q2.offer(q1.poll());
         }
 
-
         T o = q1.poll();//最后一个元素
         swap(q1, q2);
         return o;
@@ -52,7 +51,6 @@ public class QueueToStack<T> {
         Queue<T> q = q1;
         q1 = q2;
         q2 = q1;
-
 
     }
 

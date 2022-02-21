@@ -12,19 +12,18 @@ package com.dustdawn.acmcoder;
 
 public class FindKthToTail {
     //思路：前结点快k-1步，当前结点走到末结点，当前结点即为目标结点
-    public static ListNode FindKthToTail(ListNode head,int k) {
-        if(k == 0 || head == null) {
+    public static ListNode FindKthToTail(ListNode head, int k) {
+        if (k == 0 || head == null) {
             return null;
         }
         ListNode target = head;
         ListNode pre = head;
-        for (int i = 1;i < k;++i) {//前结点步差k-1
-            if(pre.next == null) {
+        for (int i = 1; i < k; ++i) {//前结点步差k-1
+            if (pre.next == null) {
                 return null;
             }
             pre = pre.next;
         }
-
 
         while (pre.next != null) {
             pre = pre.next;
@@ -36,16 +35,16 @@ public class FindKthToTail {
     public static void main(String[] args) {
         ListNode listNode[] = new ListNode[8];
         for (int i = 0; i < 8; i++) {
-            listNode[i] = new ListNode(i+1);
+            listNode[i] = new ListNode(i + 1);
         }
-        for (int i = 0; i < listNode.length-1; i++) {
-            listNode[i].next = listNode[i+1];
+        for (int i = 0; i < listNode.length - 1; i++) {
+            listNode[i].next = listNode[i + 1];
         }
 
         for (ListNode node : listNode) {
             System.out.print(node.val + " ");
         }
         System.out.println();
-        System.out.println(FindKthToTail(listNode[0],1).val);
+        System.out.println(FindKthToTail(listNode[0], 1).val);
     }
 }

@@ -20,9 +20,9 @@ public class LengthOfLongestSubstring {
         while (i < n && j < n) {
             if (!set.contains(s.charAt(j))) {
                 set.add(s.charAt(j));
-                ans = Math.max(ans, j-i+1);
+                ans = Math.max(ans, j - i + 1);
                 ++j;
-            }else {
+            } else {
                 set.remove(s.charAt(i));
                 ++i;
             }
@@ -38,14 +38,14 @@ public class LengthOfLongestSubstring {
      */
 
     public static int lengthOfLongestSubstringII(String s) {
-        int ans =0, n = s.length();
+        int ans = 0, n = s.length();
         HashMap<Character, Integer> map = new HashMap();
 
-        for (int i = 0, j =0; j < n; j++) {
+        for (int i = 0, j = 0; j < n; j++) {
             if (map.containsKey(s.charAt(j))) {
                 i = Math.max(map.get(s.charAt(j)) + 1, i);
             }
-            ans = Math.max(ans, j-i+1);
+            ans = Math.max(ans, j - i + 1);
             map.put(s.charAt(j), j);
         }
         return ans;

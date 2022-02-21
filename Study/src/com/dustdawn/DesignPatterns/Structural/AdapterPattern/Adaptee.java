@@ -10,5 +10,6 @@ package com.dustdawn.DesignPatterns.Structural.AdapterPattern;
  */
 public class Adaptee {
     //适配者专属方法
-    public void specificRequest() {}
+    public void specificRequest() {
+    }
 }

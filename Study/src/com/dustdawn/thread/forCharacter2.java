@@ -19,7 +19,7 @@ public class forCharacter2 {
                 synchronized (o) {
                     try {
                         int threadId = Integer.parseInt(Thread.currentThread().getName());
-                        System.out.println("线程"+Thread.currentThread().getName()+"启动");
+                        System.out.println("线程" + Thread.currentThread().getName() + "启动");
                         while (true) {
                             if (orderNum % 5 == threadId || orderNum % 5 == 0) {
                                 if (orderNum % 5 == threadId) {//1-4
@@ -28,11 +28,11 @@ public class forCharacter2 {
                                     System.out.println("线程" + 5 + ":" + orderNum++);
                                 }
                                 Thread.sleep(2000);
-                                System.out.println("当前线程"+threadId+"唤醒阻塞线程了");
+                                System.out.println("当前线程" + threadId + "唤醒阻塞线程了");
                                 o.notifyAll();
                             } else {
                                 //orderNum与thread不对应就阻塞
-                                System.out.println("线程"+threadId+"要阻塞了,释放对象锁");
+                                System.out.println("线程" + threadId + "要阻塞了,释放对象锁");
                                 o.wait();
                             }
                         }

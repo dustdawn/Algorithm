@@ -23,10 +23,10 @@ public class isPostorder {
             return true;
         }
 
-        int rootVal = arr[arr.length-1];
+        int rootVal = arr[arr.length - 1];
         int i = 0;
         // 搜索小于根节点的值,并记录该结点的下标(除根节点外)
-        for (; i < arr.length-1; i++) {
+        for (; i < arr.length - 1; i++) {
             if (arr[i] > rootVal) {
                 break;
             }
@@ -34,7 +34,7 @@ public class isPostorder {
 
         // 搜索大于根节点的值（除根节点外）
 
-        for (int j = i; j < arr.length-1; j++) {
+        for (int j = i; j < arr.length - 1; j++) {
             if (rootVal > arr[j]) {
                 return false;
             }
@@ -48,9 +48,8 @@ public class isPostorder {
         // 如果右子树不为空，判断右子树为二叉搜索树
         boolean right = true;
         if (i < arr.length - 1) {
-            right = isPostorder(Arrays.copyOfRange(arr, i ,arr.length-1));
+            right = isPostorder(Arrays.copyOfRange(arr, i, arr.length - 1));
         }
-
 
         return left && right;
     }

@@ -8,7 +8,7 @@ package com.dustdawn.DesignPatterns.Creational.AbstractFactory;
 /**
  * 具体工厂角色2
  */
-public class ConcreteFactory2 implements AbstractFactory{
+public class ConcreteFactory2 implements AbstractFactory {
     @Override
     public AbstractProdustA createProductA() {
         return new ConcreteProductA2();

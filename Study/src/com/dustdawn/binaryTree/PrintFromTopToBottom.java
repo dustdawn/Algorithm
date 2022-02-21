@@ -17,8 +17,6 @@ public class PrintFromTopToBottom {
     //队列实现层次遍历
     public ArrayList<Integer> PrintFromTopToBottom(TreeNode root) {
 
-
-
         ArrayList list = new ArrayList();
         if (root == null) {
             return list;

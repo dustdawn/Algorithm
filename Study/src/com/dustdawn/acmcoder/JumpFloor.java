@@ -20,14 +20,14 @@ public class JumpFloor {
         //4:5
         //5:8
         //满足菲波那切数列
-        if(target <= 2) {
+        if (target <= 2) {
             return target;
         }
         int step1 = 1;
         int step2 = 2;
         int step = 0;
         for (int i = 3; i <= target; i++) {
-            step= step1 + step2;
+            step = step1 + step2;
             step1 = step2;
             step2 = step;
         }

@@ -10,7 +10,7 @@ import java.util.Stack;
 /**
  * 两个栈实现队列
  */
-public class StackToQueue<T>{
+public class StackToQueue<T> {
 
     private Stack<T> s1;
     private Stack<T> s2;

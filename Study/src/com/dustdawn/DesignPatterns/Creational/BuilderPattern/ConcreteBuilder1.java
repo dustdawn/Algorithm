@@ -8,7 +8,7 @@ package com.dustdawn.DesignPatterns.Creational.BuilderPattern;
 /**
  * 具体建造类
  */
-public class ConcreteBuilder1 extends Builder{
+public class ConcreteBuilder1 extends Builder {
 
     @Override
     public void buildPartA() {

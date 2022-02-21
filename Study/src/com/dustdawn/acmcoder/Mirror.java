@@ -12,19 +12,19 @@ import java.util.Queue;
  * 题目描述
  * 操作给定的二叉树，将其变换为源二叉树的镜像。
  * 输入描述:
- *
+ * <p>
  * 二叉树的镜像定义：源二叉树
- *     	    8
- *     	   /  \
- *     	  6   10
- *     	 / \  / \
- *     	5  7 9 11
- *     	镜像二叉树
- *     	    8
- *     	   /  \
- *     	  10   6
- *     	 / \  / \
- *     	11 9 7  5
+ * 8
+ * /  \
+ * 6   10
+ * / \  / \
+ * 5  7 9 11
+ * 镜像二叉树
+ * 8
+ * /  \
+ * 10   6
+ * / \  / \
+ * 11 9 7  5
  */
 public class Mirror {
     public static void Mirror(TreeNode root) {
@@ -66,21 +66,19 @@ public class Mirror {
     }
 
     public static void main(String[] args) {
-        int[] arr = {8,6,10,5,7,9,11};
+        int[] arr = {8, 6, 10, 5, 7, 9, 11};
         TreeNode[] nodes = new TreeNode[arr.length];
         for (int i = 0; i < nodes.length; i++) {
             nodes[i] = new TreeNode(arr[i]);
         }
         for (int i = 0; i < 3; i++) {
-            nodes[i].left = nodes[2*(i+1)-1];
-            nodes[i].right = nodes[2*(i+1)];
+            nodes[i].left = nodes[2 * (i + 1) - 1];
+            nodes[i].right = nodes[2 * (i + 1)];
         }
         levelOrder(nodes[0]);
         Mirror(nodes[0]);
         System.out.println();
         levelOrder(nodes[0]);
-
-
 
     }
 }

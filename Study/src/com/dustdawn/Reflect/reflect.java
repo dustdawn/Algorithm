@@ -22,26 +22,32 @@ public class reflect {
      * Method：代表类的方法
      */
     int m;
+
     public reflect() {
         System.out.println("无参构造方法");
     }
+
     public reflect(String k) {
         System.out.println("一个参数构造方法---" + k);
     }
+
     public reflect(String k, Integer v) {
         System.out.println("两个参数构造方法---" + k + ":" + v);
     }
+
     public void fun1() {
         System.out.println("无参数成员方法");
     }
+
     public void fun2(String k) {
         System.out.println("一个参数成员方法---" + k);
     }
+
     public void fun3(String k, Integer v) {
         System.out.println("两个参数成员方法---" + k + ":" + v);
     }
 
-    public static boolean Process(String className, String funcName, Object[] para) throws Exception{
+    public static boolean Process(String className, String funcName, Object[] para) throws Exception {
         //获取字节码对象
         Class<?> classObj = Class.forName(className);
 
@@ -63,7 +69,7 @@ public class reflect {
         return true;
     }
 
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         //加载并初始化指定的类reflect
         Class classInfo = Class.forName("com.dustdawn.Reflect.reflect");//代表类名是A
         System.out.println("类reflect构造函数如下所示：");
@@ -86,15 +92,13 @@ public class reflect {
             System.out.println(declaredMethods[i].toString());
         }
 
-
         //=========================================构造方法=============================================
-
 
         //第一种方式
         //Constructor[] constructors = classInfo.getConstructors();
 
         //调用两个参数构造方法
-        constructors[0].newInstance(new Object[]{"Hello",2019});
+        constructors[0].newInstance(new Object[]{"Hello", 2019});
         //调用一个参数构造方法
         constructors[1].newInstance(new Object[]{"Hello"});
         //调用无参构造方法
@@ -111,7 +115,6 @@ public class reflect {
         constructor = classInfo.getConstructor(new Class[]{String.class, Integer.class});
         constructor.newInstance(new Object[]{"Hello", 2019});
 
-
         //=========================================成员方法=============================================
 
         //调用无参构造函数，生成新的实例对象
@@ -122,7 +125,6 @@ public class reflect {
         //通过实例对象进行方法的实例化
         method1.invoke(obj);
 
-
         //调用一个参数成员函数
         Method method2 = classInfo.getMethod("fun2", String.class);
         method2.invoke(obj, new Object[]{"Hello"});
@@ -130,7 +132,6 @@ public class reflect {
         //调用两个参数成员函数
         Method method3 = classInfo.getMethod("fun3", String.class, Integer.class);
         method3.invoke(obj, new Object[]{"Hello", 2019});
-
 
         Process("com.dustdawn.Reflect.reflect", "fun3", new Object[]{"Hello", 2019});
     }

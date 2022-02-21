@@ -10,11 +10,13 @@ package com.dustdawn.DesignPatterns.Creational.SingletonPattern;
  */
 public class SingletonIII {
     //通过静态内部类初始化的静态成员返回单例
-    private static class SingletonHandler{
-        private  static SingletonIII instance = new SingletonIII();
+    private static class SingletonHandler {
+        private static SingletonIII instance = new SingletonIII();
     }
 
-    private SingletonIII(){}
+    private SingletonIII() {
+    }
+
     //在调用getInstance方法才初始化静态类
     public static SingletonIII getInstance() {
         return SingletonHandler.instance;

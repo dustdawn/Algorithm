@@ -17,15 +17,16 @@ public class ReplaceSpace {
         for (int i = 0; i < len; i++) {
             char c = str.charAt(i);
             //String s = String.valueOf(str.charAt(i));
-            if(c == ' ') { //s.equals(" ");
+            if (c == ' ') { //s.equals(" ");
                 sb.append("%20"); //len += 2;
-                                  // str.replace(i, i+1, "%20");
-            }else {
+                // str.replace(i, i+1, "%20");
+            } else {
                 sb.append(c);
             }
         }
         return sb.toString();
     }
+
     public static void main(String[] args) {
         StringBuffer str = new StringBuffer("We Are Happy");
         System.out.println(replaceSpace(str));

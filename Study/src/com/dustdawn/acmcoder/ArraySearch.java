@@ -44,15 +44,15 @@ public class ArraySearch {
     public static boolean Find(int target, int array[][]) {
         int row = array.length;//行数
         int col = array[0].length;
-        if(col == 0 || target < array[0][0] || target > array[row-1][col-1]) {
+        if (col == 0 || target < array[0][0] || target > array[row - 1][col - 1]) {
             return false;
         }
-        for (int i = 0, j = col-1; i < row && j >= 0;) {
-            if(array[i][j] > target) {
+        for (int i = 0, j = col - 1; i < row && j >= 0; ) {
+            if (array[i][j] > target) {
                 j--;
-            }else if(array[i][j] < target) {
+            } else if (array[i][j] < target) {
                 i++;
-            }else {
+            } else {
                 return true;
             }
         }
@@ -62,9 +62,9 @@ public class ArraySearch {
 
     public static void main(String[] args) {
 
-        int[][] array = {{1,2,8,9},{2,4,9,12},{4,7,10,13},{6,8,11,15}};
-        System.out.println(Find(7,array));
-        System.out.println(Find(1,array));
+        int[][] array = {{1, 2, 8, 9}, {2, 4, 9, 12}, {4, 7, 10, 13}, {6, 8, 11, 15}};
+        System.out.println(Find(7, array));
+        System.out.println(Find(1, array));
 
     }
 }

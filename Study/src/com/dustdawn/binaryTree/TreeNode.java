@@ -9,12 +9,14 @@ public class TreeNode {
     TreeNode left;
     TreeNode right;
     TreeNode next;//指向父结点的指针
+
     TreeNode(int x) {
         val = x;
         left = null;
         right = null;
         next = null;
     }
+
     TreeNode() {
         val = 0;
         left = null;

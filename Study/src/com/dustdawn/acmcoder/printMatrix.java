@@ -14,15 +14,15 @@ import java.util.ArrayList;
  * 则依次打印出数字1,2,3,4,8,12,16,15,14,13,9,5,6,7,11,10.
  */
 public class printMatrix {
-    public ArrayList<Integer> printMatrix(int [][] matrix) {
+    public ArrayList<Integer> printMatrix(int[][] matrix) {
         ArrayList<Integer> list = new ArrayList<>();
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
             return list;
         }
         int up = 0;
-        int down = matrix.length-1;
+        int down = matrix.length - 1;
         int left = 0;
-        int right = matrix[0].length-1;
+        int right = matrix[0].length - 1;
 
         while (true) {
             //左到右
@@ -63,6 +63,6 @@ public class printMatrix {
 
     public static void main(String[] args) {
         printMatrix o = new printMatrix();
-        System.out.println(o.printMatrix(new int[][]{{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}}).toString());
+        System.out.println(o.printMatrix(new int[][]{{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}}).toString());
     }
 }

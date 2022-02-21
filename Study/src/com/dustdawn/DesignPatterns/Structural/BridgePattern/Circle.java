@@ -9,7 +9,7 @@ package com.dustdawn.DesignPatterns.Structural.BridgePattern;
  * 扩充抽象类
  * 圆形
  */
-public class Circle extends Shape{
+public class Circle extends Shape {
     @Override
     public void draw() {
         color.paint("圆形");

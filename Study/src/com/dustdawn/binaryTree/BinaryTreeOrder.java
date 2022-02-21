@@ -125,10 +125,10 @@ public class BinaryTreeOrder {
             //当前结点有左节点，并且左右孩子没有被遍历
             if (cur.left != null && node != cur.left && node != cur.right) {
                 stack.push(cur.left);
-            }else if (cur.right != null && node != cur.right) {
+            } else if (cur.right != null && node != cur.right) {
                 //当前结点有右孩子 并且 右孩子没被遍历过
                 stack.push(cur.right);
-            }else {
+            } else {
                 System.out.print(stack.pop().val + " ");
                 node = cur;//当前结点遍历过了
             }
@@ -154,19 +154,17 @@ public class BinaryTreeOrder {
         }
     }
 
-
-
     public static void main(String[] args) {
         BinaryTreeOrder order = new BinaryTreeOrder();
 
         TreeNode[] nodes = new TreeNode[10];
         for (int i = 0; i < nodes.length; i++) {
-            nodes[i] = new TreeNode(i+1);
+            nodes[i] = new TreeNode(i + 1);
         }
 
-        for (int i = 0; 2*i+2 < nodes.length; i++) {
-            nodes[i].left = nodes[2*i+1];
-            nodes[i].right = nodes[2*i+2];
+        for (int i = 0; 2 * i + 2 < nodes.length; i++) {
+            nodes[i].left = nodes[2 * i + 1];
+            nodes[i].right = nodes[2 * i + 2];
         }
 
         System.out.println("递归先根遍历序列：");
@@ -189,7 +187,6 @@ public class BinaryTreeOrder {
 
         System.out.println("\n层序遍历序列：");
         order.levelOrder(nodes[0]);
-
 
     }
 }

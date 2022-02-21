@@ -6,7 +6,7 @@ package com.dustdawn.acmcoder;
  */
 public class GuSheng {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,4,5};
+        int[] arr = {1, 2, 3, 4, 5};
         for (int i = 0; i < arr.length; i++) {
             calculate(arr[i]);
         }
@@ -15,10 +15,8 @@ public class GuSheng {
             calculate2(arr[i]);
         }
 
-
-
-
     }
+
     public static void calculate(int day) {
         //初始单价为1
         int price = 1;
@@ -33,18 +31,19 @@ public class GuSheng {
 
         //方法一：时间复杂度1
         //遍历天数
-        for(int i = 2;i <= day;i++) {
-            if(i == downDay) {
+        for (int i = 2; i <= day; i++) {
+            if (i == downDay) {
                 downNum++;
-                downDay = (downNum*downNum+3*downNum+2)/2;
+                downDay = (downNum * downNum + 3 * downNum + 2) / 2;
                 price--;
-            }else {
+            } else {
                 price++;
             }
         }
         System.out.println(price);
 
     }
+
     public static void calculate2(int day) {
         //方法二：根据求根公式根据day算出最大的n
         //n = -3+根号(1+8*day)/2
@@ -53,10 +52,9 @@ public class GuSheng {
         int downNum;//downNum = n
 
         //求出n后根据规律可知price = day - 2 * 已经出现的降价天数的次数
-        downNum = (int) (Math.sqrt(1+8*day)/2  - 1.5);
-        price = day - 2*downNum;
+        downNum = (int) (Math.sqrt(1 + 8 * day) / 2 - 1.5);
+        price = day - 2 * downNum;
         System.out.println(price);
     }
-
 
 }

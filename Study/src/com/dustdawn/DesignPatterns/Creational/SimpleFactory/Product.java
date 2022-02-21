@@ -9,6 +9,7 @@ public abstract class Product {
     public void methodSame() {
 
     }
+
     //声明抽象业务方法
     public abstract void methodDiff();
 }

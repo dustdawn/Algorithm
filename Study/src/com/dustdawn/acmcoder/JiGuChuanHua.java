@@ -10,8 +10,9 @@ public class JiGuChuanHua {
         int m = 3; //次数
         transmit(n, m);
     }
+
     public static void transmit(int n, int m) {
-        int[][] arr = new int[m+1][n+1];
+        int[][] arr = new int[m + 1][n + 1];
         /**
          * 定义 行:次数+1 列:人数+1 的二维数组
          * 表示有n个人，第m次回到原点左右两人的情况之和
@@ -30,22 +31,17 @@ public class JiGuChuanHua {
         //递归回边界arr[0][1]
         for (int i = 1; i <= m; i++) {
             for (int j = 1; j <= n; j++) {
-                if(j == 1) {
-                    arr[i][1] = arr[i-1][2] + arr[i-1][n];
-                }
-                else if(j == n) {
-                    arr[i][j] = arr[i-1][j-1] + arr[i-1][1];
-                }
-                else {
-                    arr[i][j] = arr[i-1][j-1] + arr[i-1][j+1];
+                if (j == 1) {
+                    arr[i][1] = arr[i - 1][2] + arr[i - 1][n];
+                } else if (j == n) {
+                    arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][1];
+                } else {
+                    arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j + 1];
                 }
 
             }
         }
         System.out.println(arr[m][1]);
-
-
-
 
     }
 

@@ -19,7 +19,7 @@ public class mainStack {
         if (stack.empty()) {//栈为空时将node直接入栈
             min = node;
             stack.push(min);
-        }else {
+        } else {
             if (node <= min) {//后续入栈元素如不比最小元素大，则备份旧min，更新min
                 stack.push(min);
                 min = node;
@@ -37,7 +37,7 @@ public class mainStack {
             if (stack.size() > 1) {
                 stack.pop();
                 min = stack.peek();
-            }else {//如果要弹出是最后一个元素
+            } else {//如果要弹出是最后一个元素
                 min = Integer.MAX_VALUE;
             }
         }

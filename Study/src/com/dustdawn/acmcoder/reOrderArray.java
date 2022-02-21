@@ -25,13 +25,13 @@ public class reOrderArray {
             if (array[i] % 2 != 0) {
                 re[j] = array[i];
                 ++j;
-            }else {
+            } else {
                 re[k] = array[i];
                 --k;
             }
         }
         //反转j到末尾元素部分数组
-        reverse(re, j, re.length-1);
+        reverse(re, j, re.length - 1);
 
         System.arraycopy(re, 0, array, 0, re.length);
         System.out.println(Arrays.toString(array));
@@ -40,9 +40,9 @@ public class reOrderArray {
 
     //插入排序思想实现，利用插入排序的稳定性O(n^2)
     public static void insertOrder(int[] array) {
-        for (int i = 0; i < array.length-1; i++) {
+        for (int i = 0; i < array.length - 1; i++) {
             int preIndex = i;
-            int current = array[i+1];
+            int current = array[i + 1];
             //将前半部分当做已排列
             //如果当前元素为奇数且前一元素为偶数，则插入到最近奇数的后面
             while (preIndex >= 0 && array[preIndex] % 2 == 0 && current % 2 == 1) {
@@ -53,6 +53,7 @@ public class reOrderArray {
         }
         System.out.println(Arrays.toString(array));
     }
+
     public static void reverse(int[] arr, int start, int end) {
         while (start < end) {
             int temp = arr[start];
@@ -64,7 +65,7 @@ public class reOrderArray {
     }
 
     public static void main(String[] args) {
-        int[] a = {8,6,5,2,1,3,4,7};
+        int[] a = {8, 6, 5, 2, 1, 3, 4, 7};
         //int a[] = {1,2,3,4,5,6,7};
         reOrderArray(a);
         insertOrder(a);

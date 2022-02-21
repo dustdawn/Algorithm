@@ -22,22 +22,22 @@ public class movingCount {
             }
         }*/
         boolean[][] isVisited = new boolean[rows][cols];
-        return recall(threshold, 0,  0, isVisited);
+        return recall(threshold, 0, 0, isVisited);
 
     }
+
     public int recall(int threshold, int rows, int cols, boolean[][] isVisited) {
         int count = 0;
 
-
         //从边界回溯统计
-        if (rows >= 0 && rows < isVisited.length   &&   cols >=0 && cols < isVisited[0].length   &&   !isVisited[rows][cols]) {
+        if (rows >= 0 && rows < isVisited.length && cols >= 0 && cols < isVisited[0].length && !isVisited[rows][cols]) {
             if (digitSum(rows) + digitSum(cols) <= threshold) {
-                isVisited[rows][cols] =true;
+                isVisited[rows][cols] = true;
                 count += 1
-                        + recall(threshold, rows, cols+1, isVisited)
-                        + recall(threshold, rows, cols-1, isVisited)
-                        + recall(threshold, rows+1, cols, isVisited)
-                        + recall(threshold, rows-1, cols, isVisited);
+                        + recall(threshold, rows, cols + 1, isVisited)
+                        + recall(threshold, rows, cols - 1, isVisited)
+                        + recall(threshold, rows + 1, cols, isVisited)
+                        + recall(threshold, rows - 1, cols, isVisited);
             }
         }
         return count;

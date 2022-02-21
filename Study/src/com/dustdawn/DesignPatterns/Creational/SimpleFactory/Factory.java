@@ -11,7 +11,7 @@ public class Factory {
         //忽略大小写
         if ("A".equalsIgnoreCase(arg)) {
             product = new ConcreteProductA();
-        }else if ("B".equalsIgnoreCase(arg)) {
+        } else if ("B".equalsIgnoreCase(arg)) {
             product = new ConcreteProductB();
         }
         return product;

@@ -14,12 +14,12 @@ public class forCharacter {
 
     /**
      * volatile变量，用来确保将变量的更新操作通知到其他线程。
-     *当把变量声明为volatile类型后，编译器与运行时都会注意到这个变量是共享的，
+     * 当把变量声明为volatile类型后，编译器与运行时都会注意到这个变量是共享的，
      * 因此不会将该变量上的操作与其他内存操作一起重排序。
      * volatile变量不会被缓存在寄存器或者对其他处理器不可见的地方，
      * 因此在读取volatile类型的变量时总会返回最新写入的值。
      */
-    public static void main(String[] args) throws InterruptedException{
+    public static void main(String[] args) throws InterruptedException {
         Runnable r = new Runnable() {
             @Override
             public void run() {
@@ -48,9 +48,9 @@ public class forCharacter {
                 }
             }
         };
-        Thread t1 = new Thread(r,"1");
-        Thread t2 = new Thread(r,"2");
-        Thread t3 = new Thread(r,"3");
+        Thread t1 = new Thread(r, "1");
+        Thread t2 = new Thread(r, "2");
+        Thread t3 = new Thread(r, "3");
         t1.start();
         t2.start();
         t3.start();

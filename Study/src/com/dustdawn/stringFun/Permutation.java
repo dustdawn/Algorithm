@@ -5,27 +5,26 @@ import com.dustdawn.utils.Utils;
 /**
  * @author dustdawn
  * @date 2019/8/1 23:02
- *
- *  求一个字符串的所有排列（递归）时间复杂度n!
+ * <p>
+ * 求一个字符串的所有排列（递归）时间复杂度n!
  */
 public class Permutation {
 
-    public static void permutation(String str){
+    public static void permutation(String str) {
         char arr[] = str.toCharArray();
-        permutation(arr,0);
+        permutation(arr, 0);
     }
 
     //思路：确定第一个位置的字符，然后分别与后面的字符进行交换
     //出口：直到与末尾元素交换
     public static void permutation(char[] arr, int start) {
-        if(arr == null || start<0){
+        if (arr == null || start < 0) {
             return;
         }
         //到末尾
-        if(start == arr.length-1) {
+        if (start == arr.length - 1) {
             System.out.println(arr);
-        }
-        else {
+        } else {
 
             for (int i = start; i < arr.length; i++) {
                 Utils.swap(arr, start, i);
@@ -34,6 +33,7 @@ public class Permutation {
             }
         }
     }
+
     public static void main(String[] args) {
         String s = "abc";
         permutation(s);

@@ -10,7 +10,7 @@ package com.dustdawn.acmcoder;
  * 输入一个整数，输出该数二进制表示中1的个数。其中负数用补码表示。
  */
 public class NumberOf1 {
-    public int NumberOf1 (int target) {
+    public int NumberOf1(int target) {
 
         //如果一个整数不为0，那么这个整数至少有一位是1。
         // 如果我们把这个整数减1，那么原来处在整数最右边的1就会变为0，

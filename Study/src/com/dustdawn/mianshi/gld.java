@@ -23,13 +23,14 @@ public class gld {
         if (n <= 0) {
             return 0;
         }
-        int r = (n+1) / 2;
+        int r = (n + 1) / 2;
         int flag = (n & 1) == 1 ? 1 : -1;
-        return r*flag;
+        return r * flag;
     }
+
     //第二题：数组相邻数字差绝对值为1，查找第一个出现指定数字的位置，例如 1,2,3,4,5,6,7,6,5,6,7,8,9      查找7，返回6
     public static int f2(int[] arr, int target) {
-        for (int i = 0; i < arr.length;) {
+        for (int i = 0; i < arr.length; ) {
             if (arr[i] == target) {
                 return i;
             }
@@ -38,21 +39,23 @@ public class gld {
         }
         return -1;
     }
+
     //第三题：给定一个非负数组，该数组位置的值代表最大能跳的个数，求其是否能够调到最后一个位置。
     public static boolean f3(int[] arr) {
         int len = arr.length;
 
-        for (int i = 0; i < len;) {
-            if (arr[i] == 0 && i != arr.length-1) {
+        for (int i = 0; i < len; ) {
+            if (arr[i] == 0 && i != arr.length - 1) {
                 break;
             }
-            if (i + arr[i] >= arr.length-1) {
+            if (i + arr[i] >= arr.length - 1) {
                 return true;
             }
             i += arr[i];
         }
         return false;
     }
+
     //第四题：输入一个字符串，打印字符串的子集。
     //写函数实现，输入一个不包含重复字符的字符串，输出该字符串中字符的所有组合，
     //例如，输入abc,输出a,b,c,ab,ac,bc,abc
@@ -68,10 +71,8 @@ public class gld {
         //不选
         f4(sb, str.substring(1));
 
-
-
-
     }
+
     //第五题：求一个数的二进制表示中的1位的个数，例如9的二进制1001,1的个数为2
     public static int f5(int binary) {
         if (binary == 0) {
@@ -83,11 +84,12 @@ public class gld {
 //                ++count;
 //            }
 //            binary >>= 1;    //每次右移，除2
-            binary = binary & (binary-1);//1000 & 0111 = 0    0111 & 0110 = 0110  0110 & 0101 = 0100  每次消除一个1;
+            binary = binary & (binary - 1);//1000 & 0111 = 0    0111 & 0110 = 0110  0110 & 0101 = 0100  每次消除一个1;
             ++count;
         }
         return count;
     }
+
     /**
      * 题目描述：
      * 五个吃货在海边忙活了一天,挖了一堆生蚝，本着公平的原则，第一个吃货把这堆生蚝平均分成了五份，但是多了一个，处于生态平衡，他提出了一个规则
@@ -100,20 +102,20 @@ public class gld {
         for (int i = 0; i < 10000; i++) {
             int temp = i;
             for (int j = 0; j < 5; j++) {
-                if (j == 0 ) {
-                    if (temp%5 != 1){
+                if (j == 0) {
+                    if (temp % 5 != 1) {
                         break;
-                    }else {
+                    } else {
                         temp = temp / 5;
                     }
 
-                }else{
-                    if (4 * temp %5 != 1) {
+                } else {
+                    if (4 * temp % 5 != 1) {
                         break;
-                    }else {
+                    } else {
                         if (j == 4) {
                             System.out.println(temp);
-                            System.out.println("原来最少" + i +"只生蚝");
+                            System.out.println("原来最少" + i + "只生蚝");
                             return;
                         }
                         temp = temp / 5;
@@ -147,26 +149,26 @@ public class gld {
     public static int getCount(String str) {
         int len = str.length();
         int[] counts = new int[len];//保存第i位元素翻译计数的个数
-        for (int i = len-1; i >=0; --i) {
+        for (int i = len - 1; i >= 0; --i) {
             int count = 0;
             if (str.charAt(i) >= '1' && str.charAt(i) <= '9') {
-                if (i != len-1) {
+                if (i != len - 1) {
                     //从尾计数，当前元素数字满足，则加上后一位元素的计数,累加至第一位
-                    count += counts[i+1];
-                }else {
+                    count += counts[i + 1];
+                } else {
                     //如果为最后一个数字，满足添加，count+1;
                     ++count;
                 }
             }
 
-            if (i < len-1) {//不为最后一个元素数字
-                int digit = str.charAt(i)-'0';
-                int digit2 = str.charAt(i+1)-'0';
-                int comb = digit*10+digit2;
+            if (i < len - 1) {//不为最后一个元素数字
+                int digit = str.charAt(i) - '0';
+                int digit2 = str.charAt(i + 1) - '0';
+                int comb = digit * 10 + digit2;
                 if (comb >= 10 && comb <= 26) {//同理同上
                     if (i < len - 2) {
-                        count += counts[i+2];
-                    }else {
+                        count += counts[i + 2];
+                    } else {
                         ++count;
                     }
                 }
@@ -180,11 +182,11 @@ public class gld {
 
     /**
      * 题目描述：
-     *
+     * <p>
      * 小猴子下山，沿着下山的路有一排桃树，每棵树都结了一些桃子。小猴子想摘桃子，但是有一些条件需要遵守，小猴子只能沿着下山的方向走，
      * 不能回头，每颗树最多摘一个，而且一旦摘了一棵树的桃子，就不能再摘比这棵树结的桃子少的树上的桃子。那么小猴子最多能摘到几颗桃子呢？
      * 举例说明，比如有5棵树，分别结了10，4，5，12，8颗桃子，那么小猴子最多能摘3颗桃子，来自于结了4，5，8颗桃子的桃树。
-     *
+     * <p>
      * 输入:
      * 输入桃树的数量和每棵树的桃子数 N x1 x2 … xn
      * 输出:
@@ -228,55 +230,55 @@ public class gld {
         //此时对比到A序列第i-1个元素和B个序列第j-1个元素
         //i=0或j=0时，空序列时两序列的最长公共子序列seq[i][j]=0
         //
-        int[][] seq = new int[len+1][len+1];
-        for (int i = 1; i < len+1; i++) {
-            for (int j = 1; j < len+1; j++) {
-                if (oldArr[i-1] == arr[j-1]) {
+        int[][] seq = new int[len + 1][len + 1];
+        for (int i = 1; i < len + 1; i++) {
+            for (int j = 1; j < len + 1; j++) {
+                if (oldArr[i - 1] == arr[j - 1]) {
                     //若元素相等，说明对比到A序列第i个元素和B个序列第j个元素相等，可以作为子序列元素，子序列长度加一
-                    seq[i][j] = seq[i-1][j-1] + 1;   //现公共子序列长度等于原公共子序列长度+1
-                }else {
+                    seq[i][j] = seq[i - 1][j - 1] + 1;   //现公共子序列长度等于原公共子序列长度+1
+                } else {
 
-                    seq[i][j] = Math.max(seq[i-1][j], seq[i][j-1]);
+                    seq[i][j] = Math.max(seq[i - 1][j], seq[i][j - 1]);
                 }
             }
         }
-
-
 
         //最终长度保存在最后一个元素
         return seq[len][len];
 
     }
+
     public static void lcs(int i, int j, int[] arr, int[][] seq) {
         if (i == 0 || j == 0) {
             return;
         }
-        if (seq[i][j] == 1){
-            lcs(i-1, j-1, arr, seq);
+        if (seq[i][j] == 1) {
+            lcs(i - 1, j - 1, arr, seq);
             System.out.println(arr[i]);
-        }else if (seq[i][j] == 2){
-            lcs(i-1, j, arr, seq);
-        }else {
-            lcs(i, j-1, arr, seq);
+        } else if (seq[i][j] == 2) {
+            lcs(i - 1, j, arr, seq);
+        } else {
+            lcs(i, j - 1, arr, seq);
         }
     }
 
-
     public static void main(String[] args) {
         System.out.println("f1：" + f1(-7));
-        System.out.println("f2：" + f2(new int[]{1,2,3,4,5,6,7,6,5,6,7,8,9}, 7));
-        System.out.println("f3：" + f3(new int[]{3,2,1,0,4}));
+        System.out.println("f2：" + f2(new int[]{1, 2, 3, 4, 5, 6, 7, 6, 5, 6, 7, 8, 9}, 7));
+        System.out.println("f3：" + f3(new int[]{3, 2, 1, 0, 4}));
 
-
-        System.out.print("f4：");f4(new String(), "abc");System.out.println();
+        System.out.print("f4：");
+        f4(new String(), "abc");
+        System.out.println();
 
         System.out.println("f5：" + f5(7));
-        System.out.print("f6：");f6();
+        System.out.print("f6：");
+        f6();
 
         System.out.println("f7：" + f7(12258));
 
-        System.out.println("fn：" + fn(new int[]{10,4,5,12,8}));
-        System.out.println("fn：" + fn(new int[]{4,5,8,10,12}));
+        System.out.println("fn：" + fn(new int[]{10, 4, 5, 12, 8}));
+        System.out.println("fn：" + fn(new int[]{4, 5, 8, 10, 12}));
     }
     /**
      * 简述题：给定一个盛有一些黑色豆子和一些白色豆子的咖啡罐以及一大堆额外的黑色豆子，重复以下过程，直至罐中仅剩一颗豆子为止。

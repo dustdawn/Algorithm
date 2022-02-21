@@ -14,13 +14,16 @@ import java.util.ArrayList;
 class ListNode {
     int val;
     ListNode next = null;
+
     ListNode() {
         this.val = 0;
     }
+
     ListNode(int val) {
         this.val = val;
     }
 }
+
 public class PrintListFromTailToHead {
     public static ArrayList<Integer> list = new ArrayList<Integer>();
 
@@ -30,23 +33,22 @@ public class PrintListFromTailToHead {
             list.add(listNode.val);
         }*/
         ListNode node = listNode;
-        while(node != null) {
-            list.add(0,node.val);
+        while (node != null) {
+            list.add(0, node.val);
             node = node.next;
         }
         return list;
 
-
-
     }
+
     public static void main(String[] args) {
         ListNode[] listNode = new ListNode[9];
         for (int i = 0; i < listNode.length; i++) {
-            listNode[i] = new ListNode(i+1);
+            listNode[i] = new ListNode(i + 1);
 
         }
-        for (int i = 0; i < listNode.length-1; i++) {
-            listNode[i].next = listNode[i+1];
+        for (int i = 0; i < listNode.length - 1; i++) {
+            listNode[i].next = listNode[i + 1];
         }
 
         ArrayList<Integer> arrayList = printListFromTailToHead(listNode[0]);

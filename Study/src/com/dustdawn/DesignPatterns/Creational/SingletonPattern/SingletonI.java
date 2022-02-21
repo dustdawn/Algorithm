@@ -12,8 +12,11 @@ package com.dustdawn.DesignPatterns.Creational.SingletonPattern;
  */
 public class SingletonI {
     private static SingletonI instance = null;//静态私有成员变量
+
     //私有构造函数
-    private SingletonI() {}
+    private SingletonI() {
+    }
+
     //静态共有工厂方法，返回唯一实例
     //保证线程安全
     public static synchronized SingletonI getInstance() {

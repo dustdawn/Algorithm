@@ -9,7 +9,7 @@ package com.dustdawn.DesignPatterns.Structural.BridgePattern;
  * 抽象扩充类
  * 正方形类
  */
-public class Square extends Shape{
+public class Square extends Shape {
     @Override
     public void draw() {
         color.paint("正方形");

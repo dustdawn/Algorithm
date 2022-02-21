@@ -20,13 +20,13 @@ public class ReverseList {
         ArrayList<ListNode> list = new ArrayList<ListNode>();
         ListNode node = head;
         while (node != null) {
-            list.add(0,node);
+            list.add(0, node);
             node = node.next;
         }
         for (int i = 0; i < list.size(); i++) {
-            if (i == list.size()-1) {
+            if (i == list.size() - 1) {
                 list.get(i).next = null;
-            }else {
+            } else {
                 list.get(i).next = list.get(i + 1);
             }
         }
@@ -53,10 +53,10 @@ public class ReverseList {
     public static void main(String[] args) {
         ListNode listNode[] = new ListNode[8];
         for (int i = 0; i < 8; i++) {
-            listNode[i] = new ListNode(i+1);
+            listNode[i] = new ListNode(i + 1);
         }
-        for (int i = 0; i < listNode.length-1; i++) {
-            listNode[i].next = listNode[i+1];
+        for (int i = 0; i < listNode.length - 1; i++) {
+            listNode[i].next = listNode[i + 1];
         }
 
         for (ListNode node : listNode) {

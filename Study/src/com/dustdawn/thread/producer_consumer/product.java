@@ -19,7 +19,9 @@ public class product {
         if (flag) {//进行消费中,生产者线程暂停
             try {
                 wait();
-            }catch (InterruptedException e) {e.printStackTrace();}
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
         ++n;
         System.out.println("已生产" + (i++) + "次");
@@ -33,7 +35,9 @@ public class product {
         if (!flag) {//进行生产中,消费者线程暂停
             try {
                 wait();
-            }catch (InterruptedException e) {e.printStackTrace();}
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
         --n;
         System.out.println("已消费" + (j++) + "次");

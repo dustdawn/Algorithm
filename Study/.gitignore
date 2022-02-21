@@ -1,7 +1,10 @@
-.project
-.classpath
-.settings
-.metadata
-.idea
+*.iml
+.idea/
 /out/
+target/
+.classpath/
+.settings/
+.DS_Store
+.settings
 .class
+.metadata

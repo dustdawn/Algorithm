@@ -9,6 +9,9 @@ package com.dustdawn.leetcode.dp;
  */
 public class LongestPalindrome {
     public static String longestPalindrome(String s) {
+        /**
+         * 1.base case
+         */
         int n = s.length();
         if (n < 2) {
             return s;
@@ -17,7 +20,10 @@ public class LongestPalindrome {
         boolean[][] dp = new boolean[n][n];
         int begin = 0;
         int maxlength = 1;
-        // dp[i][j] = i到j是否为回文串
+
+        /**
+         * 2.dp数组含义：dp[i][j]为i到j是否为回文串
+         */
         for (int i = 0; i < n; i++) {
             // i=j时为长度为1的回文串
             dp[i][i] = true;
@@ -32,6 +38,9 @@ public class LongestPalindrome {
                     break;
                 }
 
+                /**
+                 * 3.状态转移方程
+                 */
                 if (str[i] == str[j]) {
                     // str[i][j]相等时，dp[i][j]是否为回文串取决于dp[i+1][j-1]是否为回文串
                     // 边界条件：i+1到j-1的距离为1时默认为回文串，即重合

@@ -13,7 +13,10 @@ public class LongestPalindromeSubseq {
         int n = s.length();
         char[] str = s.toCharArray();
         int[][] dp = new int[n][n];
-        // dp[i][j] = i到j的最大回文长度值
+        /**
+         * 1.base case
+         * 2.dp数组含义：dp[i][j]为i到j的最大回文长度值
+         */
         for (int i = 0; i < n; i++) {
             // i=j时长度为1
             dp[i][i] = 1;
@@ -29,6 +32,9 @@ public class LongestPalindromeSubseq {
         for (int i = n - 2; i >= 0; i--) {
             // j方向从左往右遍历
             for (int j = i + 1; j < n; j++) {
+                /**
+                 * 3.状态转移方程
+                 */
                 if (str[i] == str[j]) {
                     dp[i][j] = dp[i + 1][j - 1] + 2;
                 } else {

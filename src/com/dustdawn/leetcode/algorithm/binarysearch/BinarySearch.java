@@ -1,4 +1,4 @@
-package com.dustdawn.leetcode.algorithm;
+package com.dustdawn.leetcode.algorithm.binarysearch;
 
 /**
  * 704. 二分查找

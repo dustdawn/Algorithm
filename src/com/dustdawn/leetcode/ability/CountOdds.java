@@ -1,4 +1,4 @@
-package com.dustdawn.leetcode.Ability;
+package com.dustdawn.leetcode.ability;
 
 /**
  * 1523. 在区间范围内统计奇数数目

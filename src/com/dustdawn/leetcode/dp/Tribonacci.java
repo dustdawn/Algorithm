@@ -20,7 +20,7 @@ public class Tribonacci {
         int a = 0;
         int b = 1;
         int c = 1;
-        int temp = 2;
+        int temp;
         for (int i = 3; i <= n; i++) {
             temp = a + b + c;
             a = b;

@@ -15,7 +15,7 @@ public class Fib {
         if (n < 2) {
             return n;
         }
-        int temp = 1;
+        int temp;
         int a = 0;
         int b = 1;
         for (int i = 2; i <= n; i++) {

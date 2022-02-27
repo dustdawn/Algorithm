@@ -14,17 +14,41 @@ package com.dustdawn.leetcode.dp;
  */
 public class MinCostClimbingStairs {
     public static int minCostClimbingStairs(int[] cost) {
-        int length = cost.length;
         /**
-         * 2.dp数组含义：dp[i]为剩余i个台阶时，有多少种方法可走完
+         * I.动态规划
          */
-        int[] dp = new int[length];
-        dp[0] = cost[0];
-        for (int i = 2; i < dp.length; i++) {
-            dp[i] = (dp[i - 2] > dp[i - 1] ? dp[i - 1] : dp[i - 2]) + cost[i];
+        // int length = cost.length;
+        // /**
+        //  * 2.dp数组含义：dp[i]为走到下标为i的台阶时的最低花费
+        //  */
+        // int[] dp = new int[length + 1];
+        // /**
+        //  * 1.base case
+        //  * 走到下标为1的台阶往后继续走，只有从0号台阶走一步的情况，花费cost[0]
+        //  */
+        // // 可以选择从下标为 0 或下标为 1 的台阶开始爬楼梯，所以dp[1] = 0
+        // dp[0] = 0;
+        // dp[1] = 0;
+        // for (int i = 2; i < dp.length; i++) {
+        //     /**
+        //      * 3.状态选择方程
+        //      */
+        //     dp[i] = Math.min(dp[i - 2] + cost[i - 2], dp[i - 1] + cost[i - 1]);
+        // }
+        // // dp[length]即为最后一个台阶length-1号走到楼顶的花费
+        // return dp[length];
+        /**
+         * II.优化解法
+         */
+        int a = 0;
+        int b = 0;
+        int temp;
+        for (int i = 2; i < cost.length + 1; i++) {
+            temp = Math.min(a + cost[i - 2], b + cost[i - 1]);
+            a = b;
+            b = temp;
         }
-        return 0;
-
+        return b;
     }
 
     public static void main(String[] args) {

@@ -31,7 +31,7 @@ public class ClimbStairs {
          * II.动态规划
          */
         // /**
-        //  * 2.dp数组含义：dp[i]为剩余n个台阶时，有多少种方法可走完
+        //  * 2.dp数组含义：dp[i]为剩余i个台阶时，有多少种方法可走完
         //  */
         // int[] dp = new int[n + 1];
         // /**

@@ -28,7 +28,7 @@ public class MaxProfitII {
          * II.动态规划
          */
         /**
-         * 2.dp数组：dp[i][0]表示第i天手中无股票的最大利润，dp[i][1]表示dii天手中有股票的最大利润
+         * 2.dp数组：dp[i][0]表示第i天手中无股票的最大利润，dp[i][1]表示第i天手中有股票的最大利润
          */
         int[][] dp = new int[prices.length][2];
         /**

@@ -14,12 +14,12 @@ import java.util.List;
  * @date 2022/3/23 19:09
  */
 public class Generate {
-    public List<List<Integer>> generate(int numRows) {
+    public static List<List<Integer>> generate(int numRows) {
         List<List<Integer>> res = new ArrayList<>();
         for (int i = 0; i < numRows; i++) {
             List<Integer> child = new ArrayList<>();
             for (int j = 0; j <= i; j++) {
-                if (j != 0 && j == i) {
+                if (j != 0 && j != i) {
                     /**
                      * 状态转移方程
                      * [1],
@@ -49,5 +49,6 @@ public class Generate {
          * 输入: numRows = 1
          * 输出: [[1]]
          */
+        System.out.println(generate(5));
     }
 }

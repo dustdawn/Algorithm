@@ -64,9 +64,48 @@ public class LongestPalindrome {
         return s.substring(begin, begin + maxlength);
     }
 
+    /**
+     * 非动态规划解法
+     * 时间复杂度O(N^2)同动态规划，空间复杂度O(1)
+     *
+     * @param s
+     * @return
+     */
+    public static String longestPalindrome2(String s) {
+        String res = "";
+        for (int i = 0; i < s.length(); i++) {
+            // 找到长度为奇数的回文子串
+            String s1 = palindrome(s, i, i);
+            // 找到长度为偶数的回文子串
+            String s2 = palindrome(s, i, i + 1);
+            // res = longest(res, s1, s2)
+            res = res.length() > s1.length() ? res : s1;
+            res = res.length() > s2.length() ? res : s2;
+        }
+        return res;
+    }
+
+    /**
+     * 从s[l]和s[r]开始向两端扩散，返回以s[l]和s[r]为中心的最长回文串
+     *
+     * @param s
+     * @param l
+     * @param r
+     */
+    private static String palindrome(String s, int l, int r) {
+        while (l >= 0 && r < s.length() && s.charAt(l) == s.charAt(r)) {
+            l--;
+            r++;
+        }
+        return s.substring(l + 1, r);
+    }
+
     public static void main(String[] args) {
         System.out.println(longestPalindrome("a"));
         System.out.println(longestPalindrome("ac"));
         System.out.println(longestPalindrome("aacabdkacaa"));
+        System.out.println(longestPalindrome2("aacabdbacaa"));
+        System.out.println(longestPalindrome("aacabbacaa"));
+        System.out.println(longestPalindrome2("aacabbacaa"));
     }
 }

@@ -22,7 +22,7 @@ public class IsMatch {
     }
 
     /**
-     * 2.dp函数含义：dp(s, i, p, j) = true表示s[i..]可以匹配p[j++]，反正无法匹配
+     * 2.dp函数含义：dp(s, i, p, j) = true表示s[i..]可以匹配p[j..]，反则无法匹配
      *
      * @param s 字符串
      * @param i 开始索引
@@ -45,7 +45,7 @@ public class IsMatch {
         }
         if (i == s.length()) {
             // 规则串单独未匹配完毕时，如剩下规则串能匹配空串则匹配成功
-            // 规则串能匹配空串，说明剩下部分为x*y*格式，为偶数（a ab*c*）
+            // 规则串能匹配空串，说明剩下部分为x*y*格式，为偶数（s:a p:ab*c*）
             if ((p.length() - j) % 2 != 0) {
                 // 为奇数则一定匹配失败
                 return false;
@@ -69,7 +69,7 @@ public class IsMatch {
         if (s.charAt(i) == p.charAt(j) || p.charAt(j) == '.') {
             // 字符匹配上
             if (ifStar) {
-                // 下一位为*，可匹配0次或多次（aa a*bb）
+                // 下一位为*，可匹配0次或多次（s:aa p:a*bb）
                 res = dp(s, i, p, j + 2) || dp(s, i + 1, p, j);
             } else {
                 // 不为*单独字符匹配，s和p均后移
@@ -77,7 +77,7 @@ public class IsMatch {
             }
         } else {
             if (ifStar) {
-                // 下一位为*，只能匹配0次（aa b*aa）
+                // 下一位为*，只能匹配0次，往下继续匹配（s:aa p:b*aa）
                 res = dp(s, i, p, j + 2);
             } else {
                 // 不为*单独字符匹配，无法继续匹配

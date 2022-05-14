@@ -1,12 +1,10 @@
 package com.dustdawn.DesignPatterns.Creational.SingletonPattern;
 
 /**
+ * 静态内部类实现单例模式（登记类）
+ *
  * @author dustdawn
  * @date 2019/11/5 14:51
- */
-
-/**
- * 静态内部类实现单例模式（登记类）
  */
 public class SingletonIII {
     //通过静态内部类初始化的静态成员返回单例

@@ -1,13 +1,12 @@
 package com.dustdawn.DesignPatterns.Creational.SingletonPattern;
 
 /**
+ * 双重校验锁DCL的线程安全的单例模式
+ *
  * @author dustdawn
  * @date 2019/11/5 14:54
  */
 
-/**
- * 双重校验锁DCL的线程安全的单例模式
- */
 public class Singleton {
     // volatile保证线程之间可见性和屏蔽JVM重排序
     // 也会屏蔽一些JVM的代码优化导致运行效率低，所以也不完美

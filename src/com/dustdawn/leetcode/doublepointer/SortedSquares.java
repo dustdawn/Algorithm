@@ -1,4 +1,4 @@
-package com.dustdawn.leetcode.algorithm.doublepointer;
+package com.dustdawn.leetcode.doublepointer;
 
 import java.util.Arrays;
 

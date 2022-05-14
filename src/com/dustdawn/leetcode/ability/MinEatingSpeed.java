@@ -80,6 +80,6 @@ public class MinEatingSpeed {
          * 输入: piles = [30,11,23,4,20], H = 6
          * 输出: 23
          */
-        System.out.println(minEatingSpeed(new int[]{3, 6, 7, 11}, 8));
+
     }
 }

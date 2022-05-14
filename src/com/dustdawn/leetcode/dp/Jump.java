@@ -26,6 +26,7 @@ public class Jump {
             // 到达边界
             if (i == end) {
                 end = maxRange;
+                // 从[0..i]任意位置中跳能到达的最远距离为i，此步必跳
                 steps++;
             }
         }

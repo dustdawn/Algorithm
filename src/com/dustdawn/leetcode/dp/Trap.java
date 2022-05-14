@@ -37,6 +37,34 @@ public class Trap {
         return total;
     }
 
+    /**
+     * 双指针解法
+     * 时间复杂度O(N)，空间复杂度O(1)
+     *
+     * @param height
+     * @return
+     */
+    public static int trap2(int[] height) {
+        int n = height.length;
+        int total = 0;
+        int left = 0, right = n - 1;
+        int l_max = height[0];
+        int r_max = height[n - 1];
+        while (left <= right) {
+            l_max = Math.max(l_max, height[left]);
+            r_max = Math.max(r_max, height[right]);
+            // total += Math.min(dpLeft[i], dpRight[i]) - height[i];
+            if (l_max < r_max) {
+                total += l_max - height[left];
+                left++;
+            } else {
+                total += r_max - height[right];
+                right--;
+            }
+        }
+        return total;
+    }
+
     public static void main(String[] args) {
         /**
          * 示例 1：

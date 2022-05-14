@@ -1,4 +1,4 @@
-package com.dustdawn.leetcode.algorithm.binarysearch;
+package com.dustdawn.leetcode.binarysearch;
 
 /**
  * 278. 第一个错误的版本

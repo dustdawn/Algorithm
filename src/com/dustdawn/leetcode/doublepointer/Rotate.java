@@ -1,4 +1,4 @@
-package com.dustdawn.leetcode.algorithm.doublepointer;
+package com.dustdawn.leetcode.doublepointer;
 
 /**
  * 189. 轮转数组

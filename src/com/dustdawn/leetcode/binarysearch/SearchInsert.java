@@ -1,4 +1,4 @@
-package com.dustdawn.leetcode.algorithm.binarysearch;
+package com.dustdawn.leetcode.binarysearch;
 
 /**
  * 35. 搜索插入位置

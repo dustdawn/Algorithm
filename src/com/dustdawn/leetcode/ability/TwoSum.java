@@ -27,7 +27,7 @@ public class TwoSum {
                 map.put(nums[i], i);
             }
         }
-        return new int[0];
+        return new int[]{-1, -1};
     }
 
     public static void main(String[] args) {

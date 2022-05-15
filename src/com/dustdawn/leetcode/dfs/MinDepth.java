@@ -1,7 +1,6 @@
-package com.dustdawn.leetcode.datastructure;
+package com.dustdawn.leetcode.dfs;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import com.dustdawn.leetcode.datastructure.TreeNode;
 
 /**
  * 111. 二叉树的最小深度

@@ -13,7 +13,7 @@ public class ListNode {
     /**
      * 指向下一个节点的指针
      */
-    ListNode next;
+    public ListNode next;
 
     public ListNode(int val, ListNode next) {
         this.val = val;

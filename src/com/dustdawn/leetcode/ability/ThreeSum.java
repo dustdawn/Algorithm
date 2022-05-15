@@ -27,6 +27,7 @@ public class ThreeSum {
      */
     public static List<List<Integer>> twoSumTarget(int[] nums, int start, int target) {
         // 排序后进行双指针
+        // 此处从start开始，其他不变
         int l = start;
         int r = nums.length - 1;
         LinkedList<List<Integer>> res = new LinkedList<>();

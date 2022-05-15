@@ -73,7 +73,7 @@ public class ThreeSum {
         LinkedList<List<Integer>> res = new LinkedList<>();
         // 穷举threeSum的第一个数
         for (int i = 0; i < n; i++) {
-            List<List<Integer>> tuples = twoSumTarget(nums, i + 1, 0 - nums[i]);
+            List<List<Integer>> tuples = twoSumTarget(nums, i + 1, target - nums[i]);
             // 存在满足的二元组，加上nums[i]即为结果三元组
             for (List<Integer> tuple : tuples) {
                 tuple.add(nums[i]);

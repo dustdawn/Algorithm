@@ -31,9 +31,6 @@ public class BinarySearch {
     /**
      * 锁定左侧边界
      * [left, mid)和[mid + 1, right)取前者
-     *
-     * @param left
-     * @param right
      * @param nums
      * @param target
      * @return
@@ -62,9 +59,6 @@ public class BinarySearch {
 
     /**
      * 锁定右侧边界
-     *
-     * @param left
-     * @param right
      * @param nums
      * @param target
      * @return

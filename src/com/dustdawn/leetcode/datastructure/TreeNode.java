@@ -9,15 +9,15 @@ public class TreeNode {
     /**
      * 节点存储的值
      */
-    int val;
+    public int val;
     /**
      * 指向左侧子节点的指针
      */
-    TreeNode left;
+    public TreeNode left;
     /**
      * 指向右侧子节点的指针
      */
-    TreeNode right;
+    public TreeNode right;
 
     TreeNode(int val) {
         this.val = val;

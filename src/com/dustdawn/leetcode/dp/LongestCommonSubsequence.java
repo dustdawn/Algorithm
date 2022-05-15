@@ -20,11 +20,12 @@ public class LongestCommonSubsequence {
         /**
          * 1.base case
          * i或j为0时，两个字符串有一为空串，最长公共子序列长度为0
-         *    '' a b c d e
-         * ''
-         * a
-         * b
-         * c
+         *     0  1 2 3 4 5
+         *     '' a b c d e
+         * 0 ''
+         * 1 a
+         * 1 b
+         * 3 c
          */
         /**
          * 2.dp数组含义：dp[i][j]为text1[0, i - 1]到text2[0, j - 1]的最长公共子序列

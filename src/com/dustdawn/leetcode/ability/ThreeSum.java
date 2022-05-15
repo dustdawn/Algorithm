@@ -66,7 +66,7 @@ public class ThreeSum {
      * @param target
      * @return
      */
-    public List<List<Integer>> threeSumTarget(int[] nums, int target) {
+    public static List<List<Integer>> threeSumTarget(int[] nums, int target) {
         // 排序后进行双指针
         Arrays.sort(nums);
         int n = nums.length;
@@ -87,7 +87,7 @@ public class ThreeSum {
         return res;
     }
 
-    public List<List<Integer>> threeSum(int[] nums) {
+    public static List<List<Integer>> threeSum(int[] nums) {
         return threeSumTarget(nums, 0);
     }
 

@@ -28,35 +28,6 @@ public class MinDepth {
         }
     }
 
-    /**
-     * 广度优先搜索
-     * 时间复杂度：O(N)O(N)，其中 NN 是树的节点数。对每个节点访问一次。
-     * 空间复杂度：O(N)O(N)，其中 NN 是树的节点数。空间复杂度主要取决于队列的开销，队列中的元素个数不会超过树的节点数。
-     *
-     * @param root
-     * @return
-     */
-    public static int minDepthByQueue(TreeNode root) {
-        Queue<QueueNode> queue = new LinkedList<>();
-        queue.offer(new QueueNode(root, 1));
-        while (!queue.isEmpty()) {
-            QueueNode poll = queue.poll();
-            TreeNode node = poll.node;
-            int depth = poll.depth;
-            // 遍历到叶子节点
-            if (node.left == null && node.right == null) {
-                return depth;
-            }
-            if (node.left != null) {
-                queue.offer(new QueueNode(node.left, depth + 1));
-            }
-            if (node.right != null){
-                queue.offer(new QueueNode(node.right, depth + 1));
-            }
-        }
-        return 0;
-    }
-
     public static void main(String[] args) {
         /**
          * 示例 1：

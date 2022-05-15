@@ -10,6 +10,9 @@ import java.util.Queue;
  * 给定一个二叉树，找出其最小深度。
  * 最小深度是从根节点到最近叶子节点的最短路径上的节点数量。
  * 说明：叶子节点是指没有子节点的节点。
+ * 提示：
+ * 树中节点数的范围在 [0, 105] 内
+ * -1000 <= Node.val <= 1000
  *
  * @author dustdawn
  * @date 2022/5/11 20:23
@@ -24,12 +27,18 @@ public class MinDepth {
      * @return
      */
     public static int minDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
         Queue<TreeNode> queue = new LinkedList<>();
         queue.offer(root);
-        // root本身为一层，初始化为1
+        // 记录扩散的步数，root本身为一层，初始化为1
         int depth = 1;
         while (!queue.isEmpty()) {
-            for (int i = 0; i < queue.size(); i++) {
+            // 扩散的次数
+            int size = queue.size();
+            // 将当前队列中的所有节点向四周扩散
+            for (int i = 0; i < size; i++) {
                 TreeNode node = queue.poll();
                 // 遍历到叶子节点
                 if (node.left == null && node.right == null) {
@@ -43,7 +52,7 @@ public class MinDepth {
                     queue.offer(node.right);
                 }
             }
-            // 子节点无叶子节点，继续BFS
+            // 子节点无叶子节点，继续BFS，更新扩散步数
             depth++;
         }
         return depth;

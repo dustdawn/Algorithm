@@ -173,7 +173,7 @@ public class TreeNodeUtil {
     }
 
     /**
-     * 返回以root为根几点的满二叉树节点总数(Perfect Binary Tree：所有叶子节点均在同一层)
+     * 返回以root为根节点点的满二叉树节点总数(Perfect Binary Tree：所有叶子节点均在同一层)
      * 节点总数与数的高度呈指数关系
      *
      * @param root
@@ -193,7 +193,8 @@ public class TreeNodeUtil {
     /**
      * 返回以root为根几点的完全二叉树节点总数(Complete Binary Tree：每一层的节点都紧靠左排列)
      * 结合普通二叉树和满二叉树的求法 O(logN * logN)
-     * 一棵完全二叉树的两棵子树，至少有一棵是满二叉树。所以一定会触发 leftHeight == rightHeight，只消耗O(logN)的复杂度而不会继续递归
+     * 一棵完全二叉树的两棵子树，至少有一棵是满二叉树。
+     * 所以一定会触发 leftHeight == rightHeight，只消耗O(logN)的复杂度而不会继续递归
      *
      * @param root
      * @return
@@ -210,7 +211,7 @@ public class TreeNodeUtil {
         }
         while (right != null) {
             rightHeight++;
-            right = right.left;
+            right = right.right;
         }
         // 左右子树同高
         if (leftHeight == rightHeight) {

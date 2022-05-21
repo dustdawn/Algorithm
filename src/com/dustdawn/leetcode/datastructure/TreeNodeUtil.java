@@ -230,7 +230,7 @@ public class TreeNodeUtil {
      * @param q
      * @return
      */
-    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+    public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         /*
         情况1：p、q都在以root为根的树中，返回p、q的最近公共祖先
         情况2：p、q都不在以root为根的树中，返回nul
@@ -252,14 +252,17 @@ public class TreeNodeUtil {
         // 递归左右子树
         TreeNode left = lowestCommonAncestor(root.left, p, q);
         TreeNode right = lowestCommonAncestor(root.right, p, q);
-        // left和right即为 p和q在以root左右子节点递归出的最近公共祖先
+        /*
+        假设p为root节点，如q存在以root为根的树，则root为最近公共祖先；如q不存在，则根据情况3也应该返回root
+        所以left和right即为 p和q在以root左右子节点为根的树种递归出的最近公共祖先
+         */
 
         // 情况1
         if (left != null && right != null) {
             // left和right非空时，说明p、q分别在以root左右子树中的最近公共祖先都不为空
-            // 根据三种情况，p、q只有分别存在root左右子树时才满足（否则根据情况1或2其一必为null），即情况3
-            // 而根据情况3，返回的left和right必为p和q，root为它们的公共祖先
-            // 由于后序遍历(左右根 )，root节点左右子树返回的left和right不为空，则root第一个遍历到的根节点，root即为最近公共祖先
+            // 根据三种情况，p、q只有分别存在root左右子树时才满足（情况1或2为都在同一子树或都不在同一子树），即情况3
+            // 而根据情况3，返回的left和right必为p和q，此时root为它们的公共祖先
+            // 由于后序遍历(左右根：root.left,root.right之后操作)，root节点左右子树返回的left和right不为空，则root第一个遍历到的根节点，root即为最近公共祖先
             return root;
         }
         // 情况2

@@ -18,7 +18,7 @@ package com.dustdawn.leetcode.ability;
 public class CanWinNim {
     public static boolean canWinNim(int n) {
         // 到自己回合时保留1~3颗石子->对方回合为4颗石子->则上一次自己回合为5~7颗即可控制拿完后为4颗棋子->对方回合为8颗棋子
-        return n % 4 == 0;
+        return n % 4 != 0;
     }
 
     public static void main(String[] args) {

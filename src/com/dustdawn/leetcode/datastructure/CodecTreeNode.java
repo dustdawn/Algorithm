@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * 二叉树的序列化和反序列化
+ * 297. 二叉树的序列化与反序列化
  *
  * @author dustdawn
  * @date 2022/4/23 15:51
@@ -169,6 +169,12 @@ public class CodecTreeNode {
         return stringBuilder.toString();
     }
 
+    /**
+     * 层级遍历将字符串反序列化成二叉树
+     *
+     * @param data
+     * @return
+     */
     public TreeNode deserialize(String data) {
         if (data == null || data.isEmpty()) {
             return null;

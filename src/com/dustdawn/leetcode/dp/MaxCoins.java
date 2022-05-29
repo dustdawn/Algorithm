@@ -36,7 +36,7 @@ public class MaxCoins {
                 /**
                  * 3.状态转移方程
                  * 假设k为戳破i和j中所有气球获得最高分数中最后一个戳破的气球
-                 * 戳破k的得分为题干中公式
+                 * 戳破k的得分为题干中公式，此时k旁边相邻的气球就是i和j
                  */
                 for (int k = i + 1; k < j; k++) {
                     dp[i][j] = Math.max(dp[i][j], dp[i][k] + dp[k][j] + points[i] * points[k] * points[j]);

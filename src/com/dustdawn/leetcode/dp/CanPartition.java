@@ -51,6 +51,37 @@ public class CanPartition {
         return dp[nums.length][sum];
     }
 
+    /**
+     * 状态压缩
+     *
+     * @param nums
+     * @return
+     */
+    public static boolean canPartition2(int[] nums) {
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
+        }
+        // 和为奇数时，不可能划分两个和相等的集合
+        if (sum % 2 == 1) {
+            return false;
+        }
+        // 对半取
+        sum = sum / 2;
+
+        boolean[] dp = new boolean[sum + 1];
+        dp[0] = true;
+        // 压缩后i只作为次数，即nums.length次
+        for (int i = 0; i < nums.length; i++) {
+            for (int j = sum; j >= 0; j--) {
+                if (j - nums[i] >= 0) {
+                    dp[j] = dp[j] || dp[j - nums[i]];
+                }
+            }
+        }
+        return dp[sum];
+    }
+
     public static void main(String[] args) {
         /**
          * 示例 1：

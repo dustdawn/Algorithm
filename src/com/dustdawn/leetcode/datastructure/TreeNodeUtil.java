@@ -128,6 +128,9 @@ public class TreeNodeUtil {
      * @return
      */
     public static TreeNode deleteNodeBST(TreeNode root, int key) {
+        if (root == null) {
+            return null;
+        }
         if (root.val > key) {
             // 去左子树寻找key
             root.left = deleteNodeBST(root.left, key);
@@ -147,14 +150,14 @@ public class TreeNodeUtil {
                 return root.left;
             }
             // 有两个子节点：1.在左子树找到最大的节点替换；2.在右子树找到最小的节点替换 均可满足BST
-            TreeNode minNode = null;
+            TreeNode minNode = root.right;
             // 选择方案2，找到最小的节点，即最左边的节点
-            while (root.left != null) {
-                minNode = root.left;
+            while (minNode.left != null) {
+                minNode = minNode.left;
             }
             // 此处只修改节点内部值来交换节点
             root.val = minNode.val;
-            root.right = deleteNodeBST(root, minNode.val);
+            root.right = deleteNodeBST(root.right, minNode.val);
         }
         return root;
     }

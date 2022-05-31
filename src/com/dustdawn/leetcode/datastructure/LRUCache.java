@@ -5,7 +5,7 @@ import java.util.LinkedHashMap;
 
 /**
  * 146. LRU 缓存
- * 请你设计并实现一个满足  LRU (最近最少使用) 缓存 约束的数据结构。
+ * 请你设计并实现一个满足  LRU (Least Recently Used最近最少使用) 缓存 约束的数据结构。
  * 实现 LRUCache 类：
  * LRUCache(int capacity) 以 正整数 作为容量 capacity 初始化 LRU 缓存
  * int get(int key) 如果关键字 key 存在于缓存中，则返回关键字的值，否则返回 -1 。

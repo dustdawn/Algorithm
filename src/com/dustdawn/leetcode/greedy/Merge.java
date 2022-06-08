@@ -1,5 +1,10 @@
 package com.dustdawn.leetcode.greedy;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.List;
+
 /**
  * 56. 合并区间
  * 以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] = [starti, endi] 。
@@ -14,8 +19,32 @@ package com.dustdawn.leetcode.greedy;
  */
 public class Merge {
     public static int[][] merge(int[][] intervals) {
-        return null;
+        List<int[]> merged = new ArrayList<>();
+        // 根据区间的start升序排序
+        Arrays.sort(intervals, new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                return o1[0] - o2[0];
+            }
+        });
+        // 第一个区间的end
+        int x_end = intervals[0][1];
+        merged.add(intervals[0]);
+        for (int[] interval : intervals) {
+            int start = interval[0];
+            if (start > x_end) {
+                // 不相交
+                x_end = interval[1];
+                merged.add(new int[]{start, x_end});
+            } else {
+                // 相交合并区间，合并后的end取这两个相交的区间end最大的
+                x_end = Math.max(x_end, interval[1]);
+                merged.get(merged.size() - 1)[1] = x_end;
+            }
+        }
+        return merged.toArray(new int[merged.size()][]);
     }
+
     public static void main(String[] args) {
         /**
          * 示例 1：
@@ -29,5 +58,8 @@ public class Merge {
          * 输出：[[1,5]]
          * 解释：区间 [1,4] 和 [4,5] 可被视为重叠区间。
          */
+        System.out.println(merge(new int[][]{new int[]{1, 4}, new int[]{4, 5}}));
+        System.out.println(merge(new int[][]{new int[]{1, 4}, new int[]{0, 4}}));
+        System.out.println(merge(new int[][]{new int[]{1, 4}, new int[]{0, 2}, new int[]{3, 5}}));
     }
 }

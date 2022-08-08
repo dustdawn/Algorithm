@@ -35,7 +35,9 @@ public class PancakeSort {
             if (index == n - 1) {
                 continue;
             }
+            // 反转子数组[0..index]，将index元素放至首位
             reverse(arr, index);
+            // 反转子数组[0..n-1]，将index元素放至n-1位置
             reverse(arr, n - 1);
             ret.add(index + 1);
             ret.add(n);

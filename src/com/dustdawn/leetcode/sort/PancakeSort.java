@@ -21,6 +21,11 @@ import java.util.List;
  * @date 2022/8/8 18:10
  */
 public class PancakeSort {
+    /**
+     * 类选择排序
+     * @param arr
+     * @return
+     */
     public static List<Integer> pancakeSort(int[] arr) {
         List<Integer> ret = new ArrayList<Integer>();
         for (int n = arr.length; n > 1; n--) {

@@ -12,14 +12,15 @@ public class BubbleSort extends Sort {
         if (nums == null || nums.length == 0) {
             return nums;
         }
-        // 相邻两数比较，每一轮将最大的数冒泡至末尾
+        // 相邻两数比较，每一轮将最大的数冒泡至末尾，N个数进行冒泡需要进行N-1轮比较
         // 标识每一轮是否有冒泡
         boolean flag = true;
-        for (int i = 0; i < nums.length && flag; i++) {
+        // 轮数为nums.length-1
+        for (int i = 0; i < nums.length - 1 && flag; i++) {
             flag = false;
-            // 第i轮已冒泡i + 1个数，待排序的即为[0, nums.length - i]的子数组
-            // 相邻两数比较，边界即为nums.length - i - 1
-            for (int j = 0; j < nums.length - i - 1; j++) {
+            // 升序排序中，每一轮会把最大的数冒泡至末尾，所以相互比较的次数，每一轮都会减少一次
+            // 第i轮已冒泡i个数，待排序的即为[0, 轮数总数 - i]的子数组
+            for (int j = 0; j < nums.length - 1 - i; j++) {
                 if (nums[j] > nums[j + 1]) {
                     swap(nums, j, j + 1);
                     flag = true;

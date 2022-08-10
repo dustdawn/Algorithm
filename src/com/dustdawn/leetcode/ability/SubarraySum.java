@@ -55,13 +55,7 @@ public class SubarraySum {
          *
          * 输入：nums = [1,2,3], k = 3
          * 输出：2
-         *  
-         *
-         * 提示：
-         *
-         * 1 <= nums.length <= 2 * 104
-         * -1000 <= nums[i] <= 1000
-         * -107 <= k <= 107
          */
+        System.out.println(subarraySum(new int[]{1, 2, 3}, 3));
     }
 }

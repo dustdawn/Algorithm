@@ -10,7 +10,6 @@ package com.dustdawn.leetcode.ability;
  * 假设你们每一步都是最优解。请编写一个函数，来判断你是否可以在给定石头数量为 n 的情况下赢得游戏。如果可以赢，返回 true；否则，返回 false 。
  * 提示：
  * 1 <= n <= 231 - 1
- * 通过次数133,866提交次数1
  *
  * @author dustdawn
  * @date 2022/5/24 21:33

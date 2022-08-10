@@ -27,7 +27,7 @@ public class SuperPow {
         int part1 = mypow(a, last);
         // (a^(b/10))^10
         int part2 = mypow(superPow(a, temp), 10);
-        // 可证明式：(a * b) % c = (a % c)(a % c) % c
+        // 可证明式：(a * b) % c = (a % c)(b % c) % c
         // 即对乘法的结果求模，等价于先对每个因子求模，然后对因子相乘的结果再求模
         return (part1 * part2) % 1337;
     }

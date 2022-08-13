@@ -10,21 +10,26 @@ package com.dustdawn.leetcode.binarysearch;
  * @date 2022/2/26 18:00
  */
 public class FirstBadVersion {
+    /**
+     * 锁定左侧边界的二分搜索
+     * @param n
+     * @return
+     */
     public int firstBadVersion(int n) {
         int left = 1;
         int right = n;
         int mid;
-        while (left < right) {
+        while (left <= right) {
             mid = left + (right - left) / 2;
             if (isBadVersion(mid)) {
                 // 答案在区间 [left, mid] 中
-                right = mid;
+                right = mid - 1;
             } else {
-                // 答案在区间 [mid+1, right] 中
+                // 答案在区间 [mid + 1, right] 中
                 left = mid + 1;
             }
         }
-        // 跳出循环条件 left == right，区间缩为一个点，即为答案
+        // 跳出循环条件 right = mid - 1小于left，之前的上一个right值即为最小右侧，即当前right + 1值或当前left值
         return left;
     }
 

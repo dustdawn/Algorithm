@@ -26,6 +26,7 @@ public class OpenLock {
         for (String deadend : deadends) {
             deads.add(deadend);
         }
+        // 双向BFS
         // 快速判断元素是否存在
         Set<String> q1 = new HashSet<>();
         Set<String> q2 = new HashSet<>();
@@ -37,12 +38,14 @@ public class OpenLock {
         int step = 0;
 
         while (!q1.isEmpty() && !q2.isEmpty()) {
+            // 优化点：队列中元素越多，扩散之后新的队列中元素就越多
+            // 在双向BFS中，每次都选择一个较小的集合进行扩散，那么占用的空间增长速度就会慢一点
             if (q1.size() > q2.size()) {
                 Set<String> tempForSwap = q1;
                 q1 = q2;
                 q2 = tempForSwap;
             }
-            // 在遍历的过程中不能呢个修改哈希集合
+            // 在遍历的过程中不能修改哈希集合
             // 用temp存储q1的扩散结果
             Set<String> temp = new HashSet<>();
             /*

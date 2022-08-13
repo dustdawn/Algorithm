@@ -13,7 +13,7 @@ import java.util.Comparator;
  * 提示:
  * 1 <= points.length <= 105
  * points[i].length == 2
- * -231 <= xstart < xend <= 231 - 1
+ * -2^31 <= xstart < xend <= 2^31 - 1
  *
  * @author dustdawn
  * @date 2022/4/17 16:24
@@ -37,6 +37,7 @@ public class FindMinArrowShots {
         Arrays.sort(intvs, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
+                // 直接相减整数范围溢出
                 return o1[1] > o2[1] ? 1 : (o1[1] == o2[1] ? 0 : -1);
             }
         });

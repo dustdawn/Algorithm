@@ -17,11 +17,14 @@ public class FirstBadVersion {
         while (left < right) {
             mid = left + (right - left) / 2;
             if (isBadVersion(mid)) {
+                // 答案在区间 [left, mid] 中
                 right = mid;
             } else {
+                // 答案在区间 [mid+1, right] 中
                 left = mid + 1;
             }
         }
+        // 跳出循环条件 left == right，区间缩为一个点，即为答案
         return left;
     }
 

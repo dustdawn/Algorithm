@@ -46,11 +46,11 @@ public class BinarySearch {
             } else if (nums[mid] < target) {
                 left = mid + 1;
             } else if (nums[mid] == target) {
-                // 锁定左侧，收缩右侧（right = mid - 1）
+                // 锁定左侧，收缩右侧，区间取[left, mid - 1]
                 right = mid - 1;
             }
         }
-        // 退出条件为 left = right - 1，即
+        // 退出条件为right = mid - 1后小于left，之前的上一个right值即为最小右侧，即当前right + 1值或当前left值
         if (left >= nums.length || nums[left] != target) {
             return -1;
         }
@@ -74,10 +74,11 @@ public class BinarySearch {
             } else if (nums[mid] < target) {
                 left = mid + 1;
             } else if (nums[mid] == target) {
-                // 锁定右侧，收缩左侧（left = mid + 1）
+                // 锁定右侧，收缩左侧，区间取[mid + 1, right]
                 left = mid + 1;
             }
         }
+        // 退出条件为left = mid + 1后大于right，之前的上一个left值即为最大左侧，即当前left + 1值或当前right值
         if (right < 0 || nums[right] != target) {
             return -1;
         }

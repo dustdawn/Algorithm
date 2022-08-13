@@ -3,6 +3,10 @@ package com.dustdawn.leetcode.doublepointer;
 /**
  * 189. 轮转数组
  * 给你一个数组，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。
+ * 提示：
+ * 1 <= nums.length <= 105
+ * -231 <= nums[i] <= 231 - 1
+ * 0 <= k <= 105
  *
  * @author dustdawn
  * @date 2022/2/27 17:40

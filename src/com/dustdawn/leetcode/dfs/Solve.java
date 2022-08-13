@@ -22,12 +22,12 @@ public class Solve {
         }
         int m = board.length;
         int n = board[0].length;
-        // 把第一行和最后一行的0替换成#
+        // 把第一列和最后一列的0替换成#
         for (int i = 0; i < m; i++) {
             dfs(board, i, 0);
             dfs(board, i, n - 1);
         }
-        // 把第一列和最后一列的0替换成#
+        // 把第一行和最后一行的0替换成#
         for (int j = 0; j < n; j++) {
             dfs(board, 0, j);
             dfs(board, m - 1, j);

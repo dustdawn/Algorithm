@@ -28,7 +28,7 @@ public class LongestCommonSubsequence {
          * 3 c
          */
         /**
-         * 2.dp数组含义：dp[i][j]为text1[0, i - 1]到text2[0, j - 1]的最长公共子序列
+         * 2.dp数组含义：dp[i][j]为text1[0, i]到text2[0, j]的最长公共子序列
          * 初始化长度为length + 1
          */
         int[][] dp = new int[text1.length() + 1][text2.length() + 1];

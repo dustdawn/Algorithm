@@ -11,6 +11,11 @@ package com.dustdawn.leetcode.dp;
  * @date 2022/5/29 16:39
  */
 public class CanPartition {
+    /**
+     * 子集背包问题
+     * @param nums
+     * @return
+     */
     public static boolean canPartition(int[] nums) {
         int sum = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -23,12 +28,13 @@ public class CanPartition {
         // 对半取
         sum = sum / 2;
         /**
-         * 2.dp数组：dp[i][j]表示，对于nums[0..i]是否可恰好凑成和为j的子数组，最终结果即为dp[length][sum/2]
+         * 2.dp数组：dp[i][j]表示，只使用前i个物品，当背包容量为j时，是否可以恰好装满背包，最终结果即为dp[length][sum/2]
          */
         boolean[][] dp = new boolean[nums.length + 1][sum + 1];
         /**
          * 1.base case
-         * dp[...][0] = true, dp[0][...] = false
+         * dp[...][0] = true：背包没有空间，相当于装满了
+         * dp[0][...] = false：没有物品可选择时，肯定没办法装满背包
          */
         for (int i = 0; i < nums.length + 1; i++) {
             dp[i][0] = true;
@@ -37,6 +43,9 @@ public class CanPartition {
             for (int j = 1; j < sum + 1; j++) {
                 /**
                  * 3.状态转移方程
+                 * 不把第i个物品装入背包，是否能恰好装满取决于上一个状态dp[i - 1][j]，继承之前结果
+                 * 把第i个物品装入背包，是否能够恰好装满背包取决于状态dp[i - 1][j - nums[i - 1]]
+                 * (注：i是从1开始，数组索引从0开始，第i个物品的重量为nums[i - 1])
                  */
                 if (j - nums[i - 1] < 0) {
                     // j不足，不能选择i

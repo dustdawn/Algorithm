@@ -16,6 +16,12 @@ package com.dustdawn.leetcode.dp;
  * @date 2022/6/8 20:19
  */
 public class CoinChange2 {
+    /**
+     * 完全背包问题
+     * @param amount
+     * @param coins
+     * @return
+     */
     public static int change(int amount, int[] coins) {
         /**
          * 2.dp数组：dp[i]表示凑成i的硬币组合数
@@ -23,10 +29,9 @@ public class CoinChange2 {
         int[] dp = new int[amount + 1];
         /**
          * 1.base case
-         * dp[0]为抽成0元的组合数，为一种即不选取硬币
+         * dp[0]为凑成0元的组合数，为一种即不选取硬币
          */
         dp[0] = 1;
-
         for (int coin : coins) {
             for (int i = coin; i < dp.length; i++) {
                 /**
@@ -35,6 +40,13 @@ public class CoinChange2 {
                  * 因此需要遍历coins，对于其中的每一种面额的硬币，更新数组dp中的每个大于或等于该面额的元素的值
                  * 每次遍历coin顺序相同，保证不重复
                  */
+                // if (j - coins[i - 1] < 0) {
+                //     // 把第i个物品装入背包
+                //     dp[i][j] = dp[i - 1][j];
+                // } else {
+                //     // 不把第i个物品装入背包
+                //     dp[i][j] = dp[i - 1][j] + dp[i - 1][j - coins[i - 1]];
+                // }
                 dp[i] += dp[i - coin];
             }
         }

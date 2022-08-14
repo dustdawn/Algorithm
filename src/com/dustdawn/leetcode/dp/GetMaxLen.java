@@ -30,14 +30,17 @@ public class GetMaxLen {
         dpN[0] = nums[0] < 0 ? 1 : 0;
         int res = 0;
         for (int i = 1; i < n; i++) {
-            int temp = dpN[i - 1] == 0 ? 0 : (dpN[i - 1] + 1);
+            // 变号时，只要dp[i - 1]存在，dpN则加一
+            int temp = dpN[i - 1] > 0 ? (dpN[i - 1] + 1) : 0;
             if (nums[i] > 0) {
-                // 为正数，包含nums[i]的乘积为正的最长子数组长度至少为1，为负的如果dpN[i-1]为0，则算入nums[i]后dpN[i]还是为0
+                // 为正数，包含nums[i]的乘积为正的最长子数组长度至少为1
                 dpP[i] = dpP[i - 1] + 1;
+                // 负数*正数=负数，只要dpN[i - 1]存在，dpN则在dpN[i - 1]基础上加一
                 dpN[i] = temp;
             } else if (nums[i] < 0) {
                 // 为负数，dpP和dpN的长度调换过来
                 dpN[i] = dpP[i - 1] + 1;
+                // 负数*负数=正数数，只要dp[i - 1]存在，dpP则在dpN[i - 1]基础上加一
                 dpP[i] = temp;
             } else {
                 // 为0，则包含nums[i]的最长子数组长度均为0

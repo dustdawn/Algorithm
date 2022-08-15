@@ -14,9 +14,9 @@ package com.dustdawn.leetcode.sort;
  * @date 2022/8/15 20:37
  */
 public class HeapSort extends Sort {
-    public void heapSort(int[] array) {
+    public int[] heapSort(int[] array) {
         if (array == null || array.length < 1) {
-            return;
+            return array;
         }
         int len = array.length;
         // 从倒数第二层开始建立最大堆
@@ -30,6 +30,7 @@ public class HeapSort extends Sort {
             // 对长度array[0, i]进行堆排序。每次移出最大值后相当于长度i
             heapify(array, i, 0);
         }
+        return array;
     }
 
     /**

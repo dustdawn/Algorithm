@@ -32,7 +32,8 @@ public class MaxSubarraySumCircular {
             res = Math.max(res, b);
         }
         a = nums[0];
-        // 为负数部门，首尾必不包含（0，length - 1）
+        // 情况二：最大子数组出现在收尾相连，中间为负数部分，首尾必不包含（0，length - 1），最大和即为数组总和减去负数部分和
+        // 负数部分和求最小和即可
         for (int i = 1; i < length - 1; i++) {
             b = Math.min(nums[i], nums[i] + a);
             a = b;

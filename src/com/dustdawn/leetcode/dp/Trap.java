@@ -17,7 +17,7 @@ public class Trap {
         int n = height.length;
         int total = 0;
         // 从左向右遍历数组找到每个位置柱子达到的正向最高高度
-        // 从有向左遍历数组找到每个位置柱子达到的反向最高高度
+        // 从右向左遍历数组找到每个位置柱子达到的反向最高高度
         // 获得的两组最高高度取最小值减去离地面的距离，即为雨水的容量高度（木桶效应）
         int[] dpLeft = new int[n];
         int[] dpRight = new int[n];

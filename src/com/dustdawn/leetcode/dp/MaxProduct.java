@@ -20,7 +20,7 @@ public class MaxProduct {
          */
         // int n = nums.length;
         // /**
-        //  * 2.dp数组：dp[i]表示nums[0..j]中非空连续子数组的最大乘积
+        //  * 2.dp数组：dp[i]表示nums[0..i]中非空连续子数组的最大乘积
         //  * 与负数相乘可能会变成最大值，也可能会变成最小值，都记录到dp中
         //  */
         // int[] dpMax = new int[n];

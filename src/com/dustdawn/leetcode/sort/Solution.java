@@ -14,5 +14,6 @@ public class Solution {
         System.out.println(Arrays.toString(new ShellSort().shellSort(new int[]{5, 6, 8, 2, 1, 4, 7, 3})));
         System.out.println(Arrays.toString(new MergeSort().mergeSort(new int[]{5, 6, 8, 2, 1, 4, 7, 3})));
         System.out.println(Arrays.toString(new QuickSort().quickSort(new int[]{5, 6, 8, 2, 1, 4, 7, 3})));
+        System.out.println(Arrays.toString(new HeapSort().heapSort(new int[]{5, 6, 8, 2, 1, 4, 7, 3})));
     }
 }

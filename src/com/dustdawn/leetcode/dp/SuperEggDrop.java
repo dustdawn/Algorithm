@@ -31,14 +31,14 @@ public class SuperEggDrop {
         /**
          * 1.base case
          * dp[0][...] = 0;
-         * dp[...][0] = 0'
+         * dp[...][0] = 0;
          */
         for (int i = 0; i < dp.length; i++) {
             dp[i] = new int[dp[i].length];
         }
         int m = 0;
         /*
-        题目为给定k个鸡蛋，n层楼，确定最坏情况下最少的测试次数m
+        题目为给定k个鸡蛋，n层楼，确定最坏情况下最少的测试次数m，m最大不会超过n（线性扫描）
         循环条件为dp[k][m] == n，也就是给k个鸡蛋，测试m次，最坏情况下最大测试N层楼
         通过循环找到m
          */

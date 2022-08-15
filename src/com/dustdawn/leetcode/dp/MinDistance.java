@@ -26,7 +26,7 @@ public class MinDistance {
         int m = word1.length();
         int n = word2.length();
         /**
-         * 2.dp数组：dp[i][j]表示是s1[0..i]和s2[0..j]的最小编辑距离
+         * 2.dp数组：dp[i][j]表示是word1[0..i]和word2[0..j]的最小编辑距离
          */
         int[][] dp = new int[m + 1][n + 1];
         /**

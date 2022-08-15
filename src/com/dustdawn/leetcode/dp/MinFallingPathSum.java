@@ -29,9 +29,12 @@ public class MinFallingPathSum {
                 if (j < n - 1) {
                     min = Math.min(min, matrix[i + 1][j + 1]);
                 }
+                // 到达第i行第j列的下降最小路径和
+                // matrix[i][j] + min(matrix[i + 1][j - 1]左下角, matrix[i + 1][j]下方, matrix[i + 1][j + 1]右下角)
                 matrix[i][j] += min;
             }
         }
+        // 最终到达第0层时的所有下降最小路径和中，选出最小的即可
         for (int i = 0; i < n; i++) {
             res = Math.min(res, matrix[0][i]);
         }

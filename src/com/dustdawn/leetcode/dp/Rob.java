@@ -25,7 +25,7 @@ public class Rob {
         //     return nums[0];
         // }
         // /**
-        //  * 2.dp数组含义：dp[n]为抢到第n个房屋时偷窃到的最高金额
+        //  * 2.dp数组含义：dp[i]为抢到第i个房屋时偷窃到的最高金额，最终结果为dp[n - 1]
         //  */
         // int[] dp = new int[n];
         // /**

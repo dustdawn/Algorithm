@@ -145,8 +145,8 @@ public class LFUCache {
         int freq = keyToFreq.get(key);
         // 更新KF表
         keyToFreq.put(key, freq + 1);
-        //更新FK表
-        //将key从freq对应的key列表中删除
+        // 更新FK表
+        // 将key从freq对应的key列表中删除
         if (freqToKeys.containsKey(freq)) {
             freqToKeys.get(freq).remove(key);
         }

@@ -39,7 +39,7 @@ public class NestedIterator implements Iterator<Integer> {
 
     @Override
     public boolean hasNext() {
-        // 循环拆分列表元素，知道列表第一个元素时整数类型
+        // 循环拆分列表元素，直到列表第一个元素是整数类型
         while (!list.isEmpty() && !list.get(0).isInteger()) {
             // 当列表第一个元素时列表类型时，进入循环
             List<NestedInteger> first = this.list.remove(0).getList();

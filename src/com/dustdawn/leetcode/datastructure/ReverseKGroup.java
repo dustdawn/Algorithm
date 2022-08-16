@@ -25,7 +25,7 @@ public class ReverseKGroup {
         2.k + 1个元素作为head递归调用reverseKGroup
         3.将两个过程的结果连接起来
          */
-        // 将b移至距离head k - 1个位置的节点
+        // 将b移至距离head k个位置的节点，即第k + 1个元素
         for (int i = 0; i < k; i++) {
             // 不足k个，不需要反转
             if (b == null) {

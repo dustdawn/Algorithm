@@ -2,14 +2,15 @@ package com.dustdawn.leetcode.sort;
 
 /**
  * 插入排序
- * 将当前数插入到已排好序的部分的正确位置O(n^2)
+ * 将当前数插入到已排好序的部分的正确位置
+ * O(n^2) O(1) 稳定
  *
  * @author dustdawn
  * @date 2022/4/3 16:16
  */
 public class InsertSort extends Sort {
     public int[] insertSort(int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null || nums.length < 2) {
             return nums;
         }
         // 从i开始，往前找到第一个小于自己的数的索引index，插入到其后，原[index + 1, nums.length]的数后移

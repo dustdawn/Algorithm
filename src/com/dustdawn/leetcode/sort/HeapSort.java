@@ -2,7 +2,7 @@ package com.dustdawn.leetcode.sort;
 
 /**
  * 堆排序
- * O(n * log2n)
+ * O(n * log n) O(1) 不稳定
  * 完全二叉树在满足父结点大于左右子数所有节点则为最大堆
  * 完全二叉树下以数组保存后，每个结点序号为0到length-1
  * 完全二叉树每层最多为2^(n-1)个节点
@@ -15,7 +15,7 @@ package com.dustdawn.leetcode.sort;
  */
 public class HeapSort extends Sort {
     public int[] heapSort(int[] array) {
-        if (array == null || array.length < 1) {
+        if (array == null || array.length < 2) {
             return array;
         }
         int len = array.length;
@@ -55,7 +55,7 @@ public class HeapSort extends Sort {
      * @param i
      */
     public void heapify(int[] array, int len, int i) {
-        if (i >= len) {
+        if (i > len - 1) {
             return;
         }
         int maxIndex = i;

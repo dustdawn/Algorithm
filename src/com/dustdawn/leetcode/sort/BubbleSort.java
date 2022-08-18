@@ -9,7 +9,7 @@ package com.dustdawn.leetcode.sort;
  */
 public class BubbleSort extends Sort {
     public int[] bubbleSort(int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null || nums.length < 2) {
             return nums;
         }
         // 相邻两数比较，每一轮将最大的数冒泡至末尾，N个数进行冒泡需要进行N-1轮比较

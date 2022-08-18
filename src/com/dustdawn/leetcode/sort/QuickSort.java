@@ -2,14 +2,15 @@ package com.dustdawn.leetcode.sort;
 
 /**
  * 快速排序
- * 原地分区，由上到下的，先分区，然后再处理子问题O(n * log2 n)
+ * 原地分区，由上到下的，先分区，然后再处理子问题
+ * O(n * log2 n) O(n * log2 n) 不稳定
  *
  * @author dustdawn
  * @date 2022/4/3 17:32
  */
 public class QuickSort extends Sort {
     public int[] quickSort(int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null || nums.length < 2) {
             return nums;
         }
         quickSort(nums, 0, nums.length - 1);
@@ -17,7 +18,7 @@ public class QuickSort extends Sort {
     }
 
     public void quickSort(int[] array, int start, int end) {
-        if (array.length == 0 || start < 0 || end > array.length || start > end) {
+        if (array.length < 2 || start < 0 || end > array.length - 1 || start > end) {
             return;
         }
         // 以第一个元素为基准，两边分为大、小元素子数组，返回值为排序后的基数位置

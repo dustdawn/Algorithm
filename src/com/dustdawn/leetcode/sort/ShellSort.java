@@ -2,7 +2,8 @@ package com.dustdawn.leetcode.sort;
 
 /**
  * 希尔排序
- * 跨度分组插入排序O(n * log2 n)
+ * 跨度分组插入排序
+ * O(n * log2 n) O(1) 不稳定
  *
  * @author dustdawn
  * @date 2022/4/3 16:37

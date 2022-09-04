@@ -3,7 +3,7 @@ package com.dustdawn.hw;
 import java.util.Scanner;
 
 /**
- * 单词搜索（找到它）(dfs回溯)
+ * 单词搜索（找到它）(dfs回溯扩散)
  * 题目描述
  * 找到它是一个小游戏，你需要在一个矩阵中找到给定的单词。
  * 假设给定单词 HELLOWORD，在矩阵中只要能找到 H->E->L->L->O->W->O->R->L->D连成的单词，就算通过。

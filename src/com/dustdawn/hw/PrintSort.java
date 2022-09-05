@@ -1,11 +1,11 @@
 package com.dustdawn.hw;
 
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Comparator;
+import java.util.PriorityQueue;
 import java.util.Scanner;
 
 /**
- * 打印任务排序(200分)(队列)
+ * 打印任务排序(200分)(优先队列)
  * 题目描述
  * 某个打印机根据打印队列执行打印任务。打印任务分为九个优先级，分别用数字1-9表示，数字越大优先级越高。打印机每次从队列头部取出第一个任务A，
  * 然后检查队列余下任务中有没有比A优先级更高的任务，如果有比A优先级高的任务，则将任务A放到队列尾部，否则就执行任务A的打印。
@@ -22,28 +22,30 @@ public class PrintSort {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String[] tasks = in.nextLine().split(",");
-        Queue<int[]> queue = new LinkedList<>();
-        for (int i = 0; i < tasks.length; i++) {
-            queue.add(new int[]{Integer.parseInt(tasks[i]), i});
-        }
-        String[] result = new String[tasks.length];
-        int idx = 0;
-        while (!queue.isEmpty()) {
-            int[] cur = queue.poll();
-            boolean hasLarger = false;
-            for (int[] t : queue) {
-                if (t[0] > cur[0]) {
-                    hasLarger = true;
-                    break;
+        //存放最终的顺序
+        String[] order = new String[tasks.length];
+        PriorityQueue<int[]> pq = new PriorityQueue<>(new Comparator<int[]>() {
+            @Override
+            public int compare(int[] o1, int[] o2) {
+                if (o1[0] == o2[0]) {
+                    return o1[1] - o2[1];
+                } else {
+                    return o2[0] - o1[0];
                 }
             }
-            if (hasLarger) {
-                queue.add(cur);
-            } else {
-                result[cur[1]] = String.valueOf(idx++);
-            }
+        });
+        for (int i = 0; i < tasks.length; i++) {
+            //a[0]代表数据的值 a[1]代表数据在原始数组下标
+            pq.add(new int[]{Integer.parseInt(tasks[i]), i});
         }
-        System.out.println(String.join(",", result));
+        // j代表真实的出场顺序,从头部依次取出数据
+        int j = 0;
+        while (!pq.isEmpty()) {
+            int[] max = pq.poll();
+            // 这一步就是将数据的真实出场顺序赋值给数据原本的下标位置
+            order[max[1]] = String.valueOf(j++);
+        }
+        System.out.println(String.join(",", order));
         /**
          * 示例
          * 输入

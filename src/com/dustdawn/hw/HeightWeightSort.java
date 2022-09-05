@@ -1,6 +1,8 @@
 package com.dustdawn.hw;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Scanner;
 
 /**
  * 身高体重排序(100分)(排序+哈希表)
@@ -21,42 +23,31 @@ public class HeightWeightSort {
         in.nextLine();
         String[] height = in.nextLine().split(" ");
         String[] weight = in.nextLine().split(" ");
-        int[] h = new int[n];
-        int[] w = new int[n];
-        Map<Integer, int[]> map = new HashMap<>();
+        // 不用map存储，直接二维数组，存编号，身高和体重
+        int[][] ints = new int[n][3];
         for (int i = 0; i < n; i++) {
-            h[i] = Integer.parseInt(height[i]);
-            w[i] = Integer.parseInt(weight[i]);
-            map.put(i, new int[]{0, 0});
-            int[] info = map.get(i);
-            info[0] = h[i];
-            info[1] = w[i];
+            ints[i][0] = i + 1;
+            ints[i][1] = Integer.parseInt(height[i]);
+            ints[i][2] = Integer.parseInt(weight[i]);
         }
-
-        // Map按value排序，先将map转为list,再排序list(按value值进行排序)
-        List<Map.Entry<Integer, int[]>> list = new ArrayList<Map.Entry<Integer, int[]>>(map.entrySet());
-        // 通过比较器来实现排序
-        Collections.sort(list, new Comparator<Map.Entry<Integer, int[]>>() {
+        // 直接使用lambda表达式排序
+        Arrays.sort(ints, new Comparator<int[]>() {
             @Override
-            public int compare(Map.Entry<Integer, int[]> o1, Map.Entry<Integer, int[]> o2) {
-                // 降序排序
-                int re = o1.getValue()[0] - o2.getValue()[0];
-                if (re != 0) {
-                    return re;
+            public int compare(int[] o1, int[] o2) {
+                if (o1[1] == o2[1]) {
+                    return o1[2] - o2[2];
+                } else {
+                    return o1[1] - o2[1];
                 }
-                re = o1.getValue()[1] - o2.getValue()[1];
-                if (re != 0) {
-                    return re;
-                }
-                return 0;
             }
         });
-
-        StringBuilder sb = new StringBuilder();
-        for (Map.Entry<Integer, int[]> mapping : list) {
-            sb.append(mapping.getKey() + 1 + " ");
+        for (int i = 0; i < ints.length; i++) {
+            if (i == ints.length - 1) {
+                System.out.print(ints[i][0]);
+            } else {
+                System.out.print(ints[i][0] + " ");
+            }
         }
-        System.out.print(sb.toString().trim());
         /**
          * 示例 1：
          * 输入

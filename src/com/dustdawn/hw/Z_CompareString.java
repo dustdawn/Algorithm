@@ -1,9 +1,11 @@
 package com.dustdawn.hw;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.Scanner;
 
 /**
- * 字符串比较(200分)(滑动窗口)
+ * 字符串比较(100分)(栈+滑动窗口)
  * 题目描述
  * 给定字符串A、B和正整数V，A的长度与B的长度相等， 请计算A中满足如下条件的最大连续子串的长度：
  * 1、该连续子串在A和B中的位置和长度均相同。
@@ -22,45 +24,26 @@ import java.util.Scanner;
 public class Z_CompareString {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String A = sc.nextLine();
-        String B = sc.nextLine();
-        int V = sc.nextInt();
-        char[] Aarr = A.toCharArray();
-        char[] Barr = B.toCharArray();
-        int sum = 0;
-        int start = -1;
-        int end = -1;
+        char[] s1 = sc.nextLine().toCharArray();
+        char[] s2 = sc.nextLine().toCharArray();
+        int v = sc.nextInt();
         int max = 0;
-        int diff;
-        int i = 0;
-        while (i < Aarr.length) {
-            diff = Math.abs(Aarr[i] - Barr[i]);
-            if (diff > V) {
-                i++;
-                continue;
+        int length = 0;
+        Queue<Integer> queue = new ArrayDeque<>();
+        int sum = Math.abs(s1[0] -s2[0]);
+        queue.offer(sum);
+        for (int i = 1; i < s1.length; i++) {
+            int temp = Math.abs(s1[i] -s2[i]);
+            queue.offer(temp);
+            sum += temp;
+            if (sum <= v) {
+                length = queue.size();
+            } else {
+                sum -= queue.poll();
             }
-            int curStart = i;
-            sum = diff;
-            while (sum <= V && i < Aarr.length) {
-                i++;
-                if (i >= Aarr.length) {
-                    break;
-                }
-                diff = Math.abs(Aarr[i] - Barr[i]);
-                if (diff + sum > V) {
-                    break;
-                } else {
-                    sum += diff;
-                }
-            }
-            if (max < i - curStart) {
-                max = sum;
-                start = curStart;
-                end = i - 1;
-            }
-            i = curStart + 1;
+            max = Math.max(length, max);
         }
-        System.out.println(end - start + 1);
+        System.out.println(max);
         /**
          * 示例 1 输入输出示例仅供调试，后台判题数据一般不包含示例
          * 输入

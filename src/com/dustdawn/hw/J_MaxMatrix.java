@@ -26,6 +26,8 @@ public class J_MaxMatrix {
         int ans = 0;
         for (int i = 0; i < c; i++) {
             String[] str = sc.nextLine().split(",");
+            // 或者使用subString
+            // String s = sc.nextLine().replace(",","");
             int num = 0;
             for (int j = 0; j < str.length; j++) {
                 if ("1".equals(str[j])) {

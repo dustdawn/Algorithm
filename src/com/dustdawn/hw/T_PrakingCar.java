@@ -16,7 +16,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/5 15:01
  */
-public class PrakingCar {
+public class T_PrakingCar {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
        /* String[] arr = sc.nextLine().replaceAll(",", "").split("0+");

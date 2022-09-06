@@ -18,7 +18,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/5 19:07
  */
-public class ArraySetSort {
+public class S_ArraySetSort {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String[] str = in.nextLine().split(",");

@@ -17,7 +17,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/5 14:37
  */
-public class FindCity {
+public class Z_FindCity {
     /**
      * 路径压缩的加权quick-union算法模板
      */

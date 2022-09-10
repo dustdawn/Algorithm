@@ -19,7 +19,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/5 16:05
  */
-public class IntegerMinSum {
+public class Z_IntegerMinSum {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -73,7 +73,8 @@ public class IntegerMinSum {
          * 说明
          * 1+2+（-34） = 31
          * 思路分析
-         * 这道题主要是负号的判断，遇到负号的时候，负号后面跟的数字字符串作为一个整体，才能最小。没有遇到负号的时候，单个字符相加，和最小。所以在flag=true的情况下，把所有数字加入字符串，之后无论遇到其它字符或者再遇到负号，都用sum减去这个整体字符串对应的整数。
+         * 这道题主要是负号的判断，遇到负号的时候，负号后面跟的数字字符串作为一个整体，才能最小。没有遇到负号的时候，单个字符相加，和最小。
+         * 所以在flag=true的情况下，把所有数字加入字符串，之后无论遇到其它字符或者再遇到负号，都用sum减去这个整体字符串对应的整数。
          */
     }
 }

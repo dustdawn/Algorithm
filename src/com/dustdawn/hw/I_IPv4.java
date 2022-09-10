@@ -17,7 +17,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/6 17:09
  */
-public class IPv4 {
+public class I_IPv4 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String[] strings = sc.nextLine().split("#");

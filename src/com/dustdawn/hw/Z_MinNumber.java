@@ -16,7 +16,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/5 21:00
  */
-public class MinNumber {
+public class Z_MinNumber {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String[] str = in.nextLine().split(",");

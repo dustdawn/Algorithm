@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 /**
- * 无重复字符的元素长度乘积的最大值(排序+穷举)
+ * 无重复字符的元素长度乘积的最大值(100分)(排序+穷举)
  * 题目描述：
  * 给定一个元素类型为小写字符串的数组，请计算两个没有相同字符的元素长度乘积的最大值。
  * 如果没有符合条件的两个元素返回0。
@@ -19,19 +19,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/3 16:44
  */
-public class LongestSubstring {
-    /**
-     * 示例 1：
-    * 输入
-     * iwdvpbn,hk,iuop,iikd,kadgpf
-     * 输出
-     * 14
-     * 说明：
-     * 数组中有5个元素。
-     * iwdvpbn与hk无相同的字符，满足条件，iwdvpbn的长度为7，hk的长度为2，乘积为14（7*2）。
-     * iwdvpbn与iuop、iikd、kadgpf均有相同的字符，不满足条件。
-     * iuop与iikd、kadgpf均有相同的字符，不满足条件。
-     */
+public class W_LongestSubstring {
     public static boolean isSame(String s1, String s2) {
         char[] ch1 = s1.toCharArray();
         char[] ch2 = s2.toCharArray();
@@ -65,5 +53,17 @@ public class LongestSubstring {
             }
         }
         System.out.println(max);
+        /**
+         * 示例 1：
+         * 输入
+         * iwdvpbn,hk,iuop,iikd,kadgpf
+         * 输出
+         * 14
+         * 说明：
+         * 数组中有5个元素。
+         * iwdvpbn与hk无相同的字符，满足条件，iwdvpbn的长度为7，hk的长度为2，乘积为14（7*2）。
+         * iwdvpbn与iuop、iikd、kadgpf均有相同的字符，不满足条件。
+         * iuop与iikd、kadgpf均有相同的字符，不满足条件。
+         */
     }
 }

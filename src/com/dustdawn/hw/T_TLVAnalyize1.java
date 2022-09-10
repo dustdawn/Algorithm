@@ -3,7 +3,7 @@ package com.dustdawn.hw;
 import java.util.Scanner;
 
 /**
- * TLV解析Ⅰ(进制转换)
+ * TLV解析Ⅰ(100分)(进制转换)
  * 题目描述：
  * TLV 编码是按 [ Tag Length Value ] 格式进行编码的，一段码流中的信元用Tag标识， Tag在码流中 唯一不重复 ，
  * Length表示信元Value的长度，Value表示信元的值。
@@ -26,17 +26,8 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/3 15:10
  */
-public class TLVAnalyize1 {
+public class T_TLVAnalyize1 {
     public static void main(String[] args) {
-        /**
-         * 示例 1 ：
-         *
-         * 输入
-         * 31
-         * 32 01 00 AE 90 02 00 01 02 30 03 00 AB 32 31 31 02 00 32 33 33 01 00 CC
-         * 输出
-         * 32 33
-         */
         // 思路分析
         // 字符串转整数时，可以直接转为对应进制的整数。注意是小端，小的在后面。
         Scanner sc = new Scanner(System.in);
@@ -55,5 +46,14 @@ public class TLVAnalyize1 {
                 i += length + 3;
             }
         }
+        /**
+         * 示例 1 ：
+         *
+         * 输入
+         * 31
+         * 32 01 00 AE 90 02 00 01 02 30 03 00 AB 32 31 31 02 00 32 33 33 01 00 CC
+         * 输出
+         * 32 33
+         */
     }
 }

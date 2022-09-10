@@ -15,24 +15,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/3 22:32
  */
-public class WittyDeliveryMan {
-    /**
-     * 样例
-     * 输入
-     * 5 17
-     * 输出
-     * 4
-     * 思路分析
-     * 这道题是一道动态规划问题，dp[i]表示到达第i层的最短时间。
-     * 初始化的时候，到N层以下需要的时间，都减去相应的楼层，即步行向下
-     * for (int i = 0; i <= N; i++) {  // 初始化到N层以下需要的时间
-     * dp[i] = N - i;
-     * }
-     * 转移方程为，走步行梯都是dp[i - 1] + 1，走电梯需要判断是偶数层，如果是偶数层，则dp[i / 2] + 1，
-     * 如果是奇数层，则dp[(i + 1) / 2] + 2，选择走步行梯和电梯时间最短的。
-     *
-     * @param args
-     */
+public class J_WittyDeliveryMan {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
@@ -54,5 +37,20 @@ public class WittyDeliveryMan {
             }
         }
         System.out.println(dp[m]);
+        /**
+         * 样例
+         * 输入
+         * 5 17
+         * 输出
+         * 4
+         * 思路分析
+         * 这道题是一道动态规划问题，dp[i]表示到达第i层的最短时间。
+         * 初始化的时候，到N层以下需要的时间，都减去相应的楼层，即步行向下
+         * for (int i = 0; i <= N; i++) {  // 初始化到N层以下需要的时间
+         * dp[i] = N - i;
+         * }
+         * 转移方程为，走步行梯都是dp[i - 1] + 1，走电梯需要判断是偶数层，如果是偶数层，则dp[i / 2] + 1，
+         * 如果是奇数层，则dp[(i + 1) / 2] + 2，选择走步行梯和电梯时间最短的。
+         */
     }
 }

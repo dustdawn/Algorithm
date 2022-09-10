@@ -3,7 +3,7 @@ package com.dustdawn.hw;
 import java.util.*;
 
 /**
- * 最长广播效应(排序+bfs)
+ * 最长广播效应(排序+队列bfs)
  * 题目描述
  * 某通信网络中有N个网络结点，用1到N进行标识。
  * 网络中的结点互联互通，且结点之间的消息传递有时延，相连结点的时延均为一个时间单位。
@@ -25,27 +25,7 @@ import java.util.*;
  * @date 2022/9/4 16:20
  */
 
-public class LongestBroadcast {
-    /**
-     * 示例
-     * 输入
-     * 5 7
-     * 1 4
-     * 2 1
-     * 2 3
-     * 2 4
-     * 3 4
-     * 3 5
-     * 4 5
-     * 2
-     * 输出
-     * 4
-     * 说明
-     * 结点2到5的最小时延为2，到剩余结点的最小时延均为1，所以至少要等待2*2=4s。
-     * 思路分析
-     * 单源最短路径问题，找到起始点到其它节点的最短路径的最大值乘2即可。可以使用BFS、DFS或者dijkstra算法。
-     * 这里使用BFS算法实现。
-     */
+public class Z_LongestBroadcast {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int count = sc.nextInt();
@@ -62,6 +42,7 @@ public class LongestBroadcast {
             }
         });
         int start = sc.nextInt();
+        // dist[i]：到i点的时延
         int[] dist = new int[count + 1];
         Arrays.fill(dist, Integer.MAX_VALUE);
         dist[start] = 0;
@@ -72,6 +53,7 @@ public class LongestBroadcast {
             for (int i = 0; i < n; i++) {
                 if (nums[i][0] == poll[0]) {
                     int next = nums[i][1];
+                    // 更新next的最小时延
                     if (dist[next] > dist[poll[0]] + 1) {
                         dist[next] = dist[poll[0]] + 1;
                         queue.offer(new int[]{next, dist[next]});
@@ -83,6 +65,27 @@ public class LongestBroadcast {
         for (int i = 1; i < count + 1; i++) {
             ans = Math.max(ans, dist[i]);
         }
+        // 来回广播，时延*2
         System.out.println(ans << 1);
+        /**
+         * 示例
+         * 输入
+         * 5 7
+         * 1 4
+         * 2 1
+         * 2 3
+         * 2 4
+         * 3 4
+         * 3 5
+         * 4 5
+         * 2
+         * 输出
+         * 4
+         * 说明
+         * 结点2到5的最小时延为2，到剩余结点的最小时延均为1，所以至少要等待2*2=4s。
+         * 思路分析
+         * 单源最短路径问题，找到起始点到其它节点的最短路径的最大值乘2即可。可以使用BFS、DFS或者dijkstra算法。
+         * 这里使用BFS算法实现。
+         */
     }
 }

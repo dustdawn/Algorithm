@@ -3,7 +3,7 @@ package com.dustdawn.hw;
 import java.util.Scanner;
 
 /**
- * 拼接URL(字符串替换)
+ * 拼接URL(100分)(字符串替换)
  * 题目描述：
  * 给定一个url前缀和url后缀,通过,分割 需要将其连接为一个完整的url
  * 如果前缀结尾和后缀开头都没有/，需要自动补上/连接符
@@ -17,7 +17,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/3 17:18
  */
-public class URLPre {
+public class P_URLPre {
     /**
      * 示例 1：
      * 输入

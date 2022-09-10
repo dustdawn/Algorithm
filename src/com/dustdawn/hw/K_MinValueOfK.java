@@ -21,7 +21,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/5 15:16
  */
-public class MinValueOfK {
+public class K_MinValueOfK {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String[] str1 = in.nextLine().split(" ");
@@ -57,6 +57,9 @@ public class MinValueOfK {
             if (idx[1] + 1 < n) {
                 queue.add(new int[]{idx[0], idx[1] + 1});
             }
+            /*if (idx[0] + 1 < m) {
+                queue.add(new int[]{idx[0] + 1, idx[1]});
+            }*/
             k--;
         }
         System.out.println(min);

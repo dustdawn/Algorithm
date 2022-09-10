@@ -3,7 +3,7 @@ package com.dustdawn.hw;
 import java.util.*;
 
 /**
- * 字符串统计（全量和占用字符集）(哈希表)
+ * 字符串统计（全量和占用字符集）(100分)(哈希表)
  * 题目描述：
  * 给定两个字符集合， 一个是全量字符集， 一个是已占用字符集， 已占用字符集中的字符不能再使用， 要求输出剩余可用字符集。
  * 输入描述:
@@ -21,7 +21,7 @@ import java.util.*;
  * @author dustdawn
  * @date 2022/9/3 16:21
  */
-public class StringStatistics {
+public class Z_StringStatistics {
     /**
      * 示例 1：
      * 输入

@@ -7,7 +7,8 @@ import java.util.Scanner;
 /**
  * 身高体重排序(100分)(排序+哈希表)
  * 题目描述：
- * 某学校举行运动会，学生们按编号(1、2、3…n)进行标识，现需要按照身高由低到高排列，对身高相同的人，按体重由轻到重排列；对于身高体重都相同的人，维持原有的编号顺序关系。请输出排列后的学生编号。
+ * 某学校举行运动会，学生们按编号(1、2、3…n)进行标识，现需要按照身高由低到高排列，对身高相同的人，按体重由轻到重排列；对于身高体重都相同的人，
+ * 维持原有的编号顺序关系。请输出排列后的学生编号。
  * 输入描述：
  * 两个序列，每个序列由n个正整数组成（0 < n <= 100）。第一个序列中的数值代表身高，第二个序列中的数值代表体重。。
  * 输出描述：
@@ -16,7 +17,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/5 16:59
  */
-public class HeightWeightSort {
+public class S_HeightWeightSort {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();

@@ -5,7 +5,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 /**
- * 叠积木(排序+dp最长递增子序列)
+ * 叠积木(100分)(排序+dp最长递增子序列)
  * 题目描述
  * 给出一个列表如[[6,7,],[5,4],[3,2]],表示木块的长和宽，当木块的长和宽不大于另个木块的长和宽时，就可以放在上面，此外数组还可以左右翻转。求最多能搭多少层。
  * 输入描述
@@ -16,24 +16,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/3 22:47
  */
-public class BuildingBlock {
-    /**
-     * 样例
-     * 输入
-     * [[5,4],[6,3],[6,7],[6,6],[4,6]]
-     * 输出
-     * 4
-     * 思路分析
-     * 首先对输入的积木进行处理，统一大的做长放第一个位置，小的做宽放第二个位置。
-     * 自定义排序，所有积木降序排，长度降序，相同则宽度降序。
-     * 动态规划求最大。定义一个 dp 数组，dp[i] 表示如果积木为 i 时，最大积木层数。j 表示前 i - 1 个积木，
-     * 如果前 i - 1 个积木中宽度大于当前积木，dp[i]就等于两者最大值，则状态转移方程：
-     * if (nums[j][1] >= nums[i][1]) {
-     * dp[i] = Math.max(dp[i], dp[j] + 1);  // 当前值，或从0到i-1中找到宽大于当前积木的
-     * }
-     *
-     * @param args
-     */
+public class D_BuildingBlock {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
@@ -47,7 +30,7 @@ public class BuildingBlock {
             nums[i][0] = Math.max(a, b);
             nums[i][1] = Math.min(a, b);
         }
-        // 先按长升序，再按宽降序
+        // 先按长升序，再按宽升序
         Arrays.sort(nums, new Comparator<int[]>() {
             @Override
             public int compare(int[] o1, int[] o2) {
@@ -70,6 +53,22 @@ public class BuildingBlock {
             }
             res = Math.max(res, dp[i]);
         }
-        System.out.println(res);
+        /**
+         * 样例
+         * 输入
+         * [[5,4],[6,3],[6,7],[6,6],[4,6]]
+         * 输出
+         * 4
+         * 思路分析
+         * 首先对输入的积木进行处理，统一大的做长放第一个位置，小的做宽放第二个位置。
+         * 自定义排序，所有积木降序排，长度降序，相同则宽度降序。
+         * 动态规划求最大。定义一个 dp 数组，dp[i] 表示如果积木为 i 时，最大积木层数。j 表示前 i - 1 个积木，
+         * 如果前 i - 1 个积木中宽度大于当前积木，dp[i]就等于两者最大值，则状态转移方程：
+         * if (nums[j][1] >= nums[i][1]) {
+         * dp[i] = Math.max(dp[i], dp[j] + 1);  // 当前值，或从0到i-1中找到宽大于当前积木的
+         * }
+         *
+         **/
     }
+
 }

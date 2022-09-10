@@ -21,7 +21,7 @@ import java.util.*;
  * @author dustdawn
  * @date 2022/9/5 17:34
  */
-public class DiskCapacityRank {
+public class C_DiskCapacityRank {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();

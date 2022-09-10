@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/4 15:46
  */
-public class ArchaeologicalProblem {
+public class K_ArchaeologicalProblem {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = Integer.parseInt(sc.nextLine());

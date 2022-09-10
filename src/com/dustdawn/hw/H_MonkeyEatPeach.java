@@ -18,8 +18,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/5 14:54
  */
-public class MonkeyEatPeach {
-
+public class H_MonkeyEatPeach {
     /**
      * h小时按speed速度是否能否吃完poles O(N)
      *

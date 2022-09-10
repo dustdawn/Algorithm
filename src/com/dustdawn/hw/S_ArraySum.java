@@ -1,75 +1,72 @@
 package com.dustdawn.hw;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
- * 数组连续和(100分)(前缀和)
- * 题目描述
- * 给定一个含有N个正整数的数组, 求出有多少个连续区间（包括单个正整数）, 它们的和大于等于x。
- * 输入描述
- * 第一行两个整数N x（0 < N <= 100000, 0 <= x <= 10000000)
- * 第二行有N个正整数（每个正整数小于等于100)。
- * 输出描述
- * 输出一个整数，表示所求的个数。
- * 注意：此题对效率有要求，暴力解法通过率不高，请考虑高效的实现方式。
+ * 数组求和(100分)(数组+模拟)
+ * 题目描述：
+ * 给定一个数组，编写一个函数来计算它的最大N个数与最小N个数的和。你需要对数组进行去重。
+ * 说明:
+ * 数组中数字范围[0, 1000]
+ * 最大N个数与最小N个数不能有重叠，如有重叠，输入非法返回-1
+ * 输入非法返回-1
+ * 输入描述：
+ * 第一行输入M， M标识数组大小
+ * 第二行输入M个数，标识数组内容
+ * 第三行输入N，N表达需要计算的最大、最小N个数
+ * 输出描述：
+ * 输出最大N个数与最小N个数的和。
  *
  * @author dustdawn
- * @date 2022/9/6 20:33
+ * @date 2022/9/5 16:49
  */
 public class S_ArraySum {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int target = sc.nextInt();
-        int[] nums = new int[n];
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        // TreeSet
+        ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            nums[i] = sc.nextInt();
-        }
-        int count = 0;
-        for (int i = 0; i < n; i++) {
-            int preSum = 0;
-            int minSum = 0;
-            int maxSubSum = Integer.MIN_VALUE;
-            for (int j = i; j < n; j++) {
-                preSum += nums[j];
-                maxSubSum = Math.max(maxSubSum, preSum - minSum);
-                // System.out.println(maxSubSum);
-                if (maxSubSum >= target) {
-                    count++;
-                }
-                minSum = Math.min(minSum, preSum);
+            int num = in.nextInt();
+            if (!list.contains(num)) {
+                list.add(num);
             }
         }
-        System.out.println(count);
-
+        int N = in.nextInt();
+        Collections.sort(list);
+        if (list.size() < 2 * N) {
+            System.out.println(-1);
+            return;
+        }
+        int sum = 0;
+        for (int i = 0; i < N; i++) {
+            sum += (list.get(i) + list.get(list.size() - 1 - i));
+        }
+        System.out.println(sum);
         /**
-         * 示例1 输入输出示例仅供调试，后台判题数据一般不包含示例
+         * 示例 1：
          *
          * 输入
-         *
-         * 3 7
-         *
-         * 3 4 7
-         *
+         * 5
+         * 95 88 83 64 100
+         * 2
          * 输出
+         * 342
+         * 说明
+         * 最大2个数[100,95],最小2个数[83,64], 输出为342
          *
-         * 4
+         * 示例 2：
          *
-         * 样例解释
-         *
-         * 第一行的3表示第二行数组输入3个数，第一行的7是比较数，用于判断连续数组是否大于该数；
-         *
-         * 组合为 3 + 4; 3 + 4 + 7; 4 + 7; 7; 都大于等于指定的7；所以共四组。
-         *
-         * 示例2 输入输出示例仅供调试，后台判题数据一般不包含示例
-         *
-         * 10 10000
-         *
-         * 1 2 3 4 5 6 7 8 9 10
-         *
-         * 样例解释
-         *
-         * 所有元素的和小于10000，所以返回0。
+         * 输入
+         * 5
+         * 3 2 3 4 2
+         * 2
+         * 输出
+         * -1
+         * 说明
+         * 最大2个数[4,3],最小2个数[3,2], 有重叠输出为-1
          */
     }
 }

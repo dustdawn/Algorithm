@@ -3,7 +3,7 @@ package com.dustdawn.hw;
 import java.util.Scanner;
 
 /**
- * 绘图机器(100分)(数组)
+ * 绘图机器(100分)(模拟)
  * 题目描述：
  * 绘图机器的绘图笔初始位置在原点(0,0) 机器启动后按照以下规则来进行绘制直线
  * 尝试沿着横线坐标正向绘制直线 直到给定的终点E
@@ -22,7 +22,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/5 15:41
  */
-public class DrawMachine {
+public class H_DrawMachine {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         String[] str = in.nextLine().split(" ");

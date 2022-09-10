@@ -65,7 +65,7 @@ public class D_Landlord {
                     count++;
                     res.add(x);
                 } else if (x == list.get(i - 1) && i != list.size() - 1) {
-                    continue;   //本次数字等于前面一个数字且不是数组最后一位,则进入下次循环
+                    continue;   // 本次数字等于前面一个数字且不是数组最后一位,则进入下次循环
                 }
                 if (x != list.get(i - 1) + 1 || i == list.size() - 1) {
                     if (count >= 5) {   //符合顺子

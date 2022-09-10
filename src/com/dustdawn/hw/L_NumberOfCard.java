@@ -3,7 +3,7 @@ package com.dustdawn.hw;
 import java.util.Scanner;
 
 /**
- * 连续出牌数量(dfs回溯)
+ * 连续出牌数量(200分)(dfs回溯)
  * 题目描述
  * 手里给一副手牌，数字从0-9，有r(红色),，g(绿色），b(蓝色)，y(黄色)四种颜色，出牌规则为每次打出的牌必须跟上一张的数字或者颜色相同，否则不能抽选。
  * 选手应该怎么选才能使得抽选的次数最大，并且输出这个最大次数。
@@ -16,7 +16,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/4 20:48
  */
-public class NumberOfCard {
+public class L_NumberOfCard {
     /**
      * 示例
      * 输入

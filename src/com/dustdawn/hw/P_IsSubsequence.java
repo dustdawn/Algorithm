@@ -9,7 +9,7 @@ package com.dustdawn.hw;
  * @author dustdawn
  * @date 2022/9/5 12:02
  */
-public class IsSubsequence {
+public class P_IsSubsequence {
     public boolean isSubsequence(String s, String t) {
         int i = 0;
         int j = 0;

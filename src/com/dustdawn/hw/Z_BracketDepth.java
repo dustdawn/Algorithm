@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.Stack;
 
 /**
- * 最大嵌套括号深度(栈)
+ * 最大嵌套括号深度(100分)(栈)
  * 题目描述：
  * 现有一字符串仅由 ‘(’， ‘)’， ‘{’， ‘}’， ‘[’， ']'六种括号组成。 若字符串满足以下条件之一，则为无效字符串：
  * ①任一类型的左右括号数量不相等；
@@ -18,39 +18,17 @@ import java.util.Stack;
  * @author dustdawn
  * @date 2022/9/3 20:44
  */
-public class BracketDepth {
-    /**
-     * 示例 1：
-     * 输入
-     * []
-     * 输出
-     * 1
-     * 说明
-     * 有效字符串，最大嵌套深度为1
-     * 示例 2：
-     * 输入
-     * ([]{()})
-     * 输出
-     * 3
-     * 说明
-     * 有效字符串，最大嵌套深度为3
-     * 示例 3：
-     * 输入
-     * (]
-     * 输出
-     * 0
-     * 说明
-     * 无效字符串，有两种类型的左右括号数量不相等
-     * 示例 4：
-     * 输入
-     * ([)]
-     * 输出
-     * 0
-     * 说明
-     * 无效字符串，存在未按正确顺序闭合的括号
-     *
-     * @param args
-     */
+public class Z_BracketDepth {
+
+    public static char getLeft(char r) {
+        if (r == ')') {
+            return '(';
+        } else if (r == ']') {
+            return '[';
+        }
+        return '{';
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
@@ -76,14 +54,35 @@ public class BracketDepth {
         } else {
             System.out.println(0);
         }
-    }
-
-    public static char getLeft(char r) {
-        if (r == ')') {
-            return '(';
-        } else if (r == ']') {
-            return '[';
-        }
-        return '{';
+        /**
+         * 示例 1：
+         * 输入
+         * []
+         * 输出
+         * 1
+         * 说明
+         * 有效字符串，最大嵌套深度为1
+         * 示例 2：
+         * 输入
+         * ([]{()})
+         * 输出
+         * 3
+         * 说明
+         * 有效字符串，最大嵌套深度为3
+         * 示例 3：
+         * 输入
+         * (]
+         * 输出
+         * 0
+         * 说明
+         * 无效字符串，有两种类型的左右括号数量不相等
+         * 示例 4：
+         * 输入
+         * ([)]
+         * 输出
+         * 0
+         * 说明
+         * 无效字符串，存在未按正确顺序闭合的括号
+         */
     }
 }

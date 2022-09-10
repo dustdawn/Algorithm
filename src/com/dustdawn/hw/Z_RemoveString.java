@@ -16,28 +16,7 @@ import java.util.Stack;
  * @author dustdawn
  * @date 2022/9/3 21:17
  */
-public class RemoveString {
-    /**
-     * 示例 1：
-     * 输入
-     * gg
-     * 输出
-     * 0
-     * 说明
-     * gg可以直接消除 得到空串 长度为0
-     * 示例 2：
-     * 输入
-     * mMbccbc
-     * 输出
-     * 3
-     * 说明
-     * mMbccbc中 可以先消除cc 此时变为mMbbc 再消除 bb 此时变成mMc 此时没有相同且相邻的字符
-     * 无法继续消除 最终得到字符串mMc 长度为3
-     * 备注：
-     * 输入中包含非大小写英文字母时 均为异常输入 直接返回0
-     *
-     * @param args
-     */
+public class Z_RemoveString {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
@@ -78,5 +57,25 @@ public class RemoveString {
             }
         }
         System.out.println(stack.size());
+
+        /**
+         * 示例 1：
+         * 输入
+         * gg
+         * 输出
+         * 0
+         * 说明
+         * gg可以直接消除 得到空串 长度为0
+         * 示例 2：
+         * 输入
+         * mMbccbc
+         * 输出
+         * 3
+         * 说明
+         * mMbccbc中 可以先消除cc 此时变为mMbbc 再消除 bb 此时变成mMc 此时没有相同且相邻的字符
+         * 无法继续消除 最终得到字符串mMc 长度为3
+         * 备注：
+         * 输入中包含非大小写英文字母时 均为异常输入 直接返回0
+         */
     }
 }

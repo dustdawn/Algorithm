@@ -25,7 +25,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/10 13:23
  */
-public class DigitReverse {
+public class S_DigitReverse {
     public static int firstNum(int n) {
         if (n == 1) {
             return 1;

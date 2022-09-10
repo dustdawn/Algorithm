@@ -19,7 +19,7 @@ import java.util.*;
  * @author dustdawn
  * @date 2022/9/5 22:05
  */
-public class Interval {
+public class Q_Interval {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String[] str = sc.nextLine().split(" ");
@@ -39,7 +39,7 @@ public class Interval {
             }
         }
         List<int[]> merged = new ArrayList<>();
-        // 计算完交集，按从小到大排序，左边界升序，相同，有边界升序
+        // 计算完交集，按从小到大排序，左边界升序，相同，右边界升序
         int[][] intervals = res.toArray(new int[res.size()][]);
         // 根据区间的start升序排序
         Arrays.sort(intervals, new Comparator<int[]>() {

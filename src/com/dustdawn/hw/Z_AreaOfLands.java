@@ -3,7 +3,7 @@ package com.dustdawn.hw;
 import java.util.Scanner;
 
 /**
- * 最大岛屿体积(dfs扩散)
+ * 最大岛屿体积(100分)(dfs扩散)
  * 题目描述
  * 给你一个由 大于0的数（陆地）和 0（水）组成的的二维网格，请你计算网格中最大岛屿的体积。陆地的数表示所在岛屿的体积。
  * 岛屿总是被水包围，并且每座岛屿只能由水平方向和/或竖直方向上相邻的陆地连接形成。
@@ -17,7 +17,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/4 14:09
  */
-public class AreaOfLands {
+public class Z_AreaOfLands {
     /**
      * 样例
      * 输入

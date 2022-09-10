@@ -22,25 +22,6 @@ import java.util.*;
  * @date 2022/9/3 16:21
  */
 public class Z_StringStatistics {
-    /**
-     * 示例 1：
-     * 输入
-     * a:3,b:5,c:2@a:1,b:2
-     * 输出
-     * a:2,b:3,c:2
-     * 说明：
-     * 全量字符集为三个a，5个b，2个c
-     * 已占用字符集为1个a，2个b
-     * 由于已占用字符不能再使用
-     * 因此剩余可用字符为2个a，3个b，2个c
-     * 示例 2：
-     * 输入
-     * a:3,b:5,c:2@
-     * 输出
-     * a:3,b:5,c:2@
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String[] arr = sc.nextLine().split("@");
@@ -70,5 +51,22 @@ public class Z_StringStatistics {
             sb.append(key).append(":").append(data.get(key)).append(",");
         }
         System.out.println(sb.deleteCharAt(sb.length() - 1).toString());
+        /**
+         * 示例 1：
+         * 输入
+         * a:3,b:5,c:2@a:1,b:2
+         * 输出
+         * a:2,b:3,c:2
+         * 说明：
+         * 全量字符集为三个a，5个b，2个c
+         * 已占用字符集为1个a，2个b
+         * 由于已占用字符不能再使用
+         * 因此剩余可用字符为2个a，3个b，2个c
+         * 示例 2：
+         * 输入
+         * a:3,b:5,c:2@
+         * 输出
+         * a:3,b:5,c:2@
+         */
     }
 }

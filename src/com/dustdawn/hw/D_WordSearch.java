@@ -3,7 +3,7 @@ package com.dustdawn.hw;
 import java.util.Scanner;
 
 /**
- * 单词搜索（找到它）(dfs回溯扩散)
+ * 单词搜索（找到它）(200分)(dfs回溯扩散)
  * 题目描述
  * 找到它是一个小游戏，你需要在一个矩阵中找到给定的单词。
  * 假设给定单词 HELLOWORD，在矩阵中只要能找到 H->E->L->L->O->W->O->R->L->D连成的单词，就算通过。
@@ -19,35 +19,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/4 21:02
  */
-public class WordSearch {
-    /**
-     * 示例
-     * 输入
-     * 5 5
-     * HELLOWORLD
-     * CPUCY
-     * EKLQH
-     * CHELL
-     * LROWO
-     * DGRBC
-     * 输出
-     * 3 2
-     * 输入
-     * 5 5
-     * HELLOWORLD
-     * CPUCY
-     * EKLQH
-     * CHELL
-     * LROWO
-     * AGRBC
-     * 输出
-     * NO
-     * 思路分析
-     * 单词搜索，上下左右搜索，典型的回溯法搜索。
-     * 可以参考：leetcode原题：79.单词搜索
-     * 使用布尔数组变量visited，判断是否搜索过。
-     * 使用布尔变量判断是否找到。
-     */
+public class D_WordSearch {
     public static boolean find = false;
 
     public static void main(String[] args) {
@@ -95,5 +67,33 @@ public class WordSearch {
         dfs(i, j - 1, board, word, visited, pos + 1);
         visited[i][j] = false;
     }
+    /**
+     * 示例
+     * 输入
+     * 5 5
+     * HELLOWORLD
+     * CPUCY
+     * EKLQH
+     * CHELL
+     * LROWO
+     * DGRBC
+     * 输出
+     * 3 2
+     * 输入
+     * 5 5
+     * HELLOWORLD
+     * CPUCY
+     * EKLQH
+     * CHELL
+     * LROWO
+     * AGRBC
+     * 输出
+     * NO
+     * 思路分析
+     * 单词搜索，上下左右搜索，典型的回溯法搜索。
+     * 可以参考：leetcode原题：79.单词搜索
+     * 使用布尔数组变量visited，判断是否搜索过。
+     * 使用布尔变量判断是否找到。
+     */
 
 }

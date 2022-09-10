@@ -22,7 +22,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/5 14:49
  */
-public class MostTeam {
+public class Z_MostTeam {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();

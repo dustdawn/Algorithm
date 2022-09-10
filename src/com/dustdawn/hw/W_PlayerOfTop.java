@@ -20,7 +20,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/5 16:33
  */
-public class PlayerOfTop {
+public class W_PlayerOfTop {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String[] str = sc.nextLine().split(",");

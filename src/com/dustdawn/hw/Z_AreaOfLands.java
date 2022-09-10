@@ -18,22 +18,19 @@ import java.util.Scanner;
  * @date 2022/9/4 14:09
  */
 public class Z_AreaOfLands {
-    /**
-     * 样例
-     * 输入
-     * 5 5
-     * 0 1 1 0 0
-     * 0 1 1 0 0
-     * 0 0 0 0 0
-     * 0 0 1 2 3
-     * 0 0 1 3 9
-     * 输出
-     * 19
-     * 思路分析
-     * 这道题完完全全就是leetcode上的200.岛屿的数量，那道题是统计岛屿的个数，这个题是统计最大岛屿的体积。
-     * 在dfs里面累加各个小岛屿的体积，然后在外面判断是否最大。
-     */
     public static int area = 0;
+
+    public static void dfs(int[][] nums, int i, int j) {
+        if (i < 0 || i >= nums.length || j < 0 || j >= nums[0].length || nums[i][j] == 0) {
+            return;
+        }
+        area += nums[i][j];
+        nums[i][j] = 0;
+        dfs(nums, i + 1, j);
+        dfs(nums, i, j + 1);
+        dfs(nums, i - 1, j);
+        dfs(nums, i, j - 1);
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -56,17 +53,20 @@ public class Z_AreaOfLands {
             }
         }
         System.out.println(res);
-    }
-
-    public static void dfs(int[][] nums, int i, int j) {
-        if (i < 0 || i >= nums.length || j < 0 || j >= nums[0].length || nums[i][j] == 0) {
-            return;
-        }
-        area += nums[i][j];
-        nums[i][j] = 0;
-        dfs(nums, i + 1, j);
-        dfs(nums, i, j + 1);
-        dfs(nums, i - 1, j);
-        dfs(nums, i, j - 1);
+        /**
+         * 样例
+         * 输入
+         * 5 5
+         * 0 1 1 0 0
+         * 0 1 1 0 0
+         * 0 0 0 0 0
+         * 0 0 1 2 3
+         * 0 0 1 3 9
+         * 输出
+         * 19
+         * 思路分析
+         * 这道题完完全全就是leetcode上的200.岛屿的数量，那道题是统计岛屿的个数，这个题是统计最大岛屿的体积。
+         * 在dfs里面累加各个小岛屿的体积，然后在外面判断是否最大。
+         */
     }
 }

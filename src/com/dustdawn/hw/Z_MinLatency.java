@@ -3,7 +3,7 @@ package com.dustdawn.hw;
 import java.util.*;
 
 /**
- * 最小传输时延(Dijkstra)
+ * 最小传输时延(200分)(Dijkstra)
  * 题目描述
  * 某通信网络中有N个网络结点，用1到N进行标识。网络通过一个有向无环图表示，其中图的边的值表示结点之间的消息传递时延。
  * 现给定相连节点之间的时延列表times[i]={u，v，w}，其中u表示源结点，v表示目的结点，w表示u和v之间的消息传递时延。
@@ -21,23 +21,7 @@ import java.util.*;
  * @author dustdawn
  * @date 2022/9/4 14:43
  */
-public class MinLatency {
-    /**
-     * 示例
-     * 输入
-     * 3 3
-     * 1 2 11
-     * 2 3 13
-     * 1 3 50
-     * 1 3
-     * 输出
-     * 24
-     * 思路分析
-     * 典型的有向图的单源最短路径，可以使用Dijkstra算法计算起点到终点的最短时延。
-     * 使用优先队列实现算法中每次取最短路径。
-     * 提供两种连接关系的表示方法，包括邻接表和邻接矩阵。
-     * 注：邻接矩阵表示的时候，不要赋值Integer.MAX_VALUE，会溢出，+1，变为负数
-     */
+public class Z_MinLatency {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int m = sc.nextInt();
@@ -82,6 +66,22 @@ public class MinLatency {
         } else {
             System.out.println(dist[to]);
         }
-
+        /**
+         /**
+         * 示例
+         * 输入
+         * 3 3
+         * 1 2 11
+         * 2 3 13
+         * 1 3 50
+         * 1 3
+         * 输出
+         * 24
+         * 思路分析
+         * 典型的有向图的单源最短路径，可以使用Dijkstra算法计算起点到终点的最短时延。
+         * 使用优先队列实现算法中每次取最短路径。
+         * 提供两种连接关系的表示方法，包括邻接表和邻接矩阵。
+         * 注：邻接矩阵表示的时候，不要赋值Integer.MAX_VALUE，会溢出，+1，变为负数
+         */
     }
 }

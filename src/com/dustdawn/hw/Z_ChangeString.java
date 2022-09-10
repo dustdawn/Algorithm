@@ -18,7 +18,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/5 20:25
  */
-public class ChangeString {
+public class Z_ChangeString {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();

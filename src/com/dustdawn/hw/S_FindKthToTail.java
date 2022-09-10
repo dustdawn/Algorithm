@@ -3,7 +3,7 @@ package com.dustdawn.hw;
 import java.util.Scanner;
 
 /**
- * 输出单向链表中倒数第k个结点(快慢指针)
+ * 输出单向链表中倒数第k个结点(100分)(快慢指针)
  * 题目描述
  * 输入一个单向链表，输出该链表中倒数第k个结点，链表的倒数第1个结点为链表的尾指针。
  * 链表结点定义如下：
@@ -27,7 +27,7 @@ import java.util.Scanner;
  * @author dustdawn
  * @date 2022/9/4 13:45
  */
-public class FindKthToTail {
+public class S_FindKthToTail {
     /**
      * 示例1
      * 输入：

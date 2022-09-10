@@ -3,7 +3,7 @@ package com.dustdawn.hw;
 import java.util.*;
 
 /**
- * VLAN资源池(排序+贪心区间)
+ * VLAN资源池(100分)(排序+贪心区间)
  * 题目描述：
  * VLAN是一种对局域网设备进行逻辑划分的技术，为了标识不同的VLAN，引入VLAN ID(1-4094之间的整数)的概念。
  * 定义一个VLAN ID的资源池(下称VLAN资源池)，资源池中连续的VLAN用开始VLAN-结束VLAN表示，不连续的用单个整数表示，
@@ -20,7 +20,7 @@ import java.util.*;
  * @author dustdawn
  * @date 2022/9/3 15:33
  */
-public class VLANResource {
+public class V_VLANResource {
     /**
      * 示例 1：
      * 输入

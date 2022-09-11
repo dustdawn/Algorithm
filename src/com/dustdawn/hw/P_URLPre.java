@@ -18,30 +18,6 @@ import java.util.Scanner;
  * @date 2022/9/3 17:18
  */
 public class P_URLPre {
-    /**
-     * 示例 1：
-     * 输入
-     * /acm,/bb
-     * 输出
-     * /acm/bb
-     * 示例 2：
-     * 输入
-     * /abc/,/bcd
-     * 输出
-     * /abc/bcd
-     * 示例 3：
-     * 输入
-     * /acd,bef
-     * 输出
-     * /acd/bef
-     * 示例 4：
-     * 输入
-     * ,
-     * 输出
-     * /
-     *
-     * @param args
-     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String str = sc.nextLine();
@@ -53,5 +29,27 @@ public class P_URLPre {
         StringBuilder sb = new StringBuilder();
         sb.append("/").append(url[0]).append("/").append(url[1]);
         System.out.println(sb.toString().replaceAll("/+", "/"));
+        /**
+         * 示例 1：
+         * 输入
+         * /acm,/bb
+         * 输出
+         * /acm/bb
+         * 示例 2：
+         * 输入
+         * /abc/,/bcd
+         * 输出
+         * /abc/bcd
+         * 示例 3：
+         * 输入
+         * /acd,bef
+         * 输出
+         * /acd/bef
+         * 示例 4：
+         * 输入
+         * ,
+         * 输出
+         * /
+         */
     }
 }

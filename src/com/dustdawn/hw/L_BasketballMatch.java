@@ -37,7 +37,7 @@ public class L_BasketballMatch {
             int index = 0;
             int min = Integer.MAX_VALUE;
             for (int i = 0; i < list.size(); i++) {
-                int n = Math.abs(list.get(i) - mid);
+                int n = Math.abs(2 * list.get(i) - mid);
                 min = Math.min(n, min);
                 if (min == n) {    //求最接近平均数的队员及其下标
                     index = i;
@@ -55,6 +55,28 @@ public class L_BasketballMatch {
         }
 
         System.out.println(Math.abs(count1 - count2));
+
+        int[] ints = new int[10];
+        count = 0;
+        for (int i = 0; i < 10; i++) {
+            ints[i] = sc.nextInt();
+            count += ints[i];
+        }
+        int n;
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < 6; i++) {
+            for (int j = i + 1; j < 7; j++) {
+                for (int k = j + 1; k < 8; k++) {
+                    for (int l = k + 1; l < 9; l++) {
+                        for (int m = l + 1; m < 10; m++) {
+                            n = ints[i] + ints[j] + ints[k] + ints[l] + ints[m];
+                            min = Math.min(min, Math.abs(count - 2 * n));
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println(min);
 
         /**
          * 示例1

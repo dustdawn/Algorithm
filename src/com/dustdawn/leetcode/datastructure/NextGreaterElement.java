@@ -21,13 +21,6 @@ import java.util.Stack;
  * @date 2022/6/6 19:56
  */
 public class NextGreaterElement {
-    /**
-     * 单调栈
-     *
-     * @param nums1
-     * @param nums2
-     * @return
-     */
     public static int[] nextGreaterElement(int[] nums1, int[] nums2) {
         Stack<Integer> stack = new Stack<>();
         Map<Integer, Integer> map = new HashMap<>();

@@ -19,7 +19,7 @@ public class MySqrt {
         // 锁定右侧边界
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            long pow = mid * mid;
+            long pow = (long) mid * mid;
             if (pow > x) {
                 right = mid - 1;
             } else if (pow < x) {
